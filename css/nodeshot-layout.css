@@ -3,11 +3,12 @@
  * Keep here all instructions to style the layout
  */
 
-/*body{ min-width: 381px }*/
+.center-stage,
+#top-bar,
+#nav-bar{ padding-left: 4.5%; padding-right: 4.5% }
 
 #top-bar{
     height: 70px;
-    padding: 0 4.5%;
     /* align search box to right */
     text-align: right;
 }
@@ -16,7 +17,6 @@
 
 #nav-bar{
     margin: 0;
-    padding: 0 4.5%;
     border-radius: 0;
     border: 0 none;
 }
@@ -109,7 +109,7 @@
     margin: 0;
 }
 
-/* --- LARGE and EXTRA LARGE --- */
+/* --- TABLETS AND DESKTOPS --- */
 
 @media screen and (min-width: 767px){
     #general-search{
@@ -137,27 +137,36 @@
     }
 }
 
-/* --- MEDIUM --- */
+/* --- adjustments for medium sizes  --- */
 
 @media screen and (min-width: 767px) and (max-width: 920px) {
-    #top-bar, #nav-bar{ padding: 0 2% }
+    .center-stage,
+    #top-bar,
+    #nav-bar{ padding-left: 2%; padding-right: 2% }
+    
     #general-search{
         width: 210px;
         margin-right: 1.8%;
     }
 }
 
-/* --- SMALL --- */
+/* --- adjustments for small sizes  --- */
 
 @media screen and (max-width: 830px) {
     /* hide username */
     #top-bar .text{ display: none }
 }
 
-@media screen and (min-width: 0px) and (max-width: 767px){
+/* --- SMALL: TABLETS AND MOBILE PHONES --- */
+
+@media screen and (min-width: 0px) and (max-width: 767px){    
+    .center-stage,
+    #top-bar,
+    #nav-bar{ padding-left: 2.5%; padding-right: 2.5% }
+    
     #top-bar{
         height: 50px;
-        padding: 0 0 0 2.5%;
+        padding-right: 0;
     }
     
     #top-bar h1 a{
@@ -188,7 +197,6 @@
     
     #top-bar .text,
     #top-bar .caret{ display: none }
-    
     
     #top-bar .icon-globe{
         font-size: 27px;
@@ -232,4 +240,11 @@
     }
     
     #nav-bar .dropdown.open{ z-index: 1 }
+}
+
+/* --- Content --- */
+
+body > article{
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
