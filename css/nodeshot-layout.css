@@ -81,6 +81,14 @@
     text-align: center;
 }
 
+/* account drop down */
+#top-bar .dropdown-menu{
+    left: auto;
+    right: 0;
+}
+
+#top-bar .dropdown-menu a{ width: 100% }
+
 #nav-bar .collapse{ padding: 0 3px }
 
 /* main links */
@@ -101,10 +109,7 @@
     margin: 0;
 }
 
-/*#ns-top-nav-links ul.nav{ min-width: 711px }*/
-
-/*#nav-bar{ display: none }*/
-/*#top-bar{ display: none }*/
+/* --- LARGE and EXTRA LARGE --- */
 
 @media screen and (min-width: 767px){
     #general-search{
@@ -126,14 +131,26 @@
         font-size: 30px;
         line-height: 0;
     }
+    
+    #top-bar .dropdown-menu{
+        width: 100%;
+    }
 }
 
-@media screen and (min-width: 767px) and (max-width: 850px) {
+/* --- MEDIUM --- */
+
+@media screen and (min-width: 767px) and (max-width: 920px) {
     #top-bar, #nav-bar{ padding: 0 2% }
     #general-search{
         width: 210px;
         margin-right: 1.8%;
     }
+}
+
+/* --- SMALL --- */
+
+@media screen and (max-width: 830px) {
+    /* hide username */
     #top-bar .text{ display: none }
 }
 

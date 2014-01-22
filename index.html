@@ -37,9 +37,9 @@
                 <li>
                     <a href="#" class="icon-search">&nbsp;</a>
                 </li>
-                <li><a href="#"><span class="icon-user-add"></span><span class="text">Sign up</span></a></li>
-                <li><a href="#"><span class="icon-user"></span><span class="text">Sign in</span></a></li>
-                <!--<li>
+                <!--<li><a href="#"><span class="icon-user-add"></span><span class="text">Sign up</span></a></li>
+                <li><a href="#"><span class="icon-user"></span><span class="text">Sign in</span></a></li>-->
+                <li>
                     <a href="#" class="notifications">
                         <span class="icon-globe">&nbsp;</span>
                         &nbsp;
@@ -49,7 +49,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <span class="icon-user"></span>
-                        <span class="text">nemesis</span>
+                        <span class="text" id="username-js">nemesisdesign</span>
                         <span class="caret"></span>
                     </a>
                     
@@ -58,7 +58,7 @@
                         <li><a href="#"><span class="icon-wrench"></span>Settings</a></li>
                         <li><a href="#"><span class="icon-off"></span>Logout</a></li>
                     </ul>
-                </li>-->
+                </li>
                 <li>
                     <a href="#" class="icon-menu"
                        data-toggle="collapse"
@@ -130,6 +130,24 @@
             e.preventDefault();
             $('#ns-top-nav-links li.active').removeClass('active');
             $(this).parents('li').eq(0).addClass('active');
+        });
+        
+        // truncate long usernames
+        var $username = $('#username-js');
+        if($username.text().length > 15){
+            var truncated = $username.text().substr(0, 13) + "&hellip;";
+            $username.html(truncated);
+        }
+        
+        // set max height of collapsible menu (mobile)
+        var setCollapsibleMainMenuMaxHeight = function(){
+            $('#nav-bar .navbar-collapse').css('max-height', $(window).height()-50);
+        }
+        
+        $(window).resize(function(e){
+            setCollapsibleMainMenuMaxHeight();
+        }).load(function(e){
+            setCollapsibleMainMenuMaxHeight();
         });
     </script>
 </body>
