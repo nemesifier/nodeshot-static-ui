@@ -1,0 +1,121 @@
+/*
+ * Nodeshot colors
+ * keep here all instructions related to colors,
+ * background colors, borders, ecc
+ */
+
+#top-bar h1 a:focus{ outline: 1px dotted rgba(255, 255, 255, 0.7) }
+
+#top-bar{
+    background-color: #de5c44;
+    background: -moz-linear-gradient(left, #df5d43 0%, #f0775f 50%, #df5d43 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#df5d43), color-stop(50%,#f0775f), color-stop(100%,#df5d43)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #df5d43 0%,#f0775f 50%,#df5d43 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #df5d43 0%,#f0775f 50%,#df5d43 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #df5d43 0%,#f0775f 50%,#df5d43 100%); /* IE10+ */
+    background: linear-gradient(to right, #df5d43 0%,#f0775f 50%,#df5d43 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#df5d43', endColorstr='#df5d43',GradientType=1 ); /* IE6-9 */
+}
+
+#nav-bar{
+    background: #383838; /* Old browsers */
+    background: -moz-linear-gradient(top,  #383838 0%, #4d4d4d 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#383838), color-stop(100%,#4d4d4d)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #383838 0%,#4d4d4d 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #383838 0%,#4d4d4d 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #383838 0%,#4d4d4d 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #383838 0%,#4d4d4d 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#383838', endColorstr='#4d4d4d',GradientType=0 ); /* IE6-9 */
+}
+
+body > header{
+    -webkit-box-shadow: 0px 5px 6px 4px rgba(1,2,2,0.22);
+    -moz-box-shadow: 0px 5px 6px 4px rgba(1,2,2,0.22);
+    box-shadow: 0px 5px 6px 4px rgba(1,2,2,0.22);
+    color: #fff;
+}
+
+#general-search::-webkit-input-placeholder {
+    color: #979696;
+}
+#general-search:-moz-placeholder {
+    /* FF 4-18 */
+    color: #979696;
+}
+#general-search::-moz-placeholder {
+    /* FF 19+ */
+    color: #979696;
+}    
+#general-search:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #979696;
+}
+
+#top-bar a{ color: #fff }
+
+#top-bar > ul > li > a{
+    border-left: 1px solid rgba(255, 255, 255, 0);
+    border-right: 1px solid rgba(255, 255, 255, 0);
+    margin-left: -1px;
+}
+
+#top-bar > ul > li > a:hover,
+#top-bar > ul > li > a:focus,
+#top-bar li.open a{
+    background-color: #df5134;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    outline: 0 none;
+}
+#top-bar > ul > li > :active { background-color: #ff866d }
+
+#top-bar li ul{
+    padding: 0;
+    margin: -2px 0 0 0;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+#top-bar li li a{
+    margin: 0;
+    background-color: #df5134
+}
+
+#top-bar li li a:hover{
+    background-color: #ff866d
+}
+
+#top-bar .notifications .bg{
+    background-color: #4d4d4d;
+}
+
+#ns-top-nav-links > ul > li > a{ color: #dbdbdb }
+#ns-top-nav-links > ul > li > a span{ color: #9e9e9e }
+#ns-top-nav-links > ul > li > a:hover,
+#ns-top-nav-links > ul > li > a:focus,
+#ns-top-nav-links > ul > li > a:hover span,
+#ns-top-nav-links > ul > li > a:focus span,
+#ns-top-nav-links a
+{ color: #fff }
+
+#ns-top-nav-links > ul > li.active > a,
+#ns-top-nav-links > ul > li.active > a span
+{ color: #e6e6e6 }
+
+#ns-top-nav-links ul.dropdown-menu,
+#ns-top-nav-links ul.dropdown-menu li{
+    background-color: #4d4d4d;
+    color: #fff;
+}
+
+#ns-top-nav-links ul.dropdown-menu{
+    border-top: 0 none;
+}
+
+#ns-top-nav-links ul.dropdown-menu a{ padding: 8px 20px }
+#ns-top-nav-links ul.dropdown-menu a:hover{
+    background-color: #000;
+}
+
+/*#ns-top-nav-links ul.dropdown-menu a{*/
+/*    */
+/*}*/

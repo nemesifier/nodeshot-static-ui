@@ -1,0 +1,25 @@
+/*
+ * Nodeshot typography
+ * keep here all instructions related to fonts and text
+ */
+
+body{
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input, textarea, button{
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#top-bar{
+    font-size: 15px;
+}
+
+#top-bar .notifications .bg{
+    font: bold 14px "Arial", sans-serif;
+}
+
+#top-bar ul li a{ text-decoration: none }
+#ns-top-nav-links a span{ font-size: 15px }

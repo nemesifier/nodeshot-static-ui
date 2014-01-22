@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'nodeshot';
+  src: url('../fonts/nodeshot.eot?24942220');
+  src: url('../fonts/nodeshot.eot?24942220#iefix') format('embedded-opentype'),
+       url('../fonts/nodeshot.woff?24942220') format('woff'),
+       url('../fonts/nodeshot.ttf?24942220') format('truetype'),
+       url('../fonts/nodeshot.svg?24942220#nodeshot') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'nodeshot';
+    src: url('../fonts/nodeshot.svg?24942220#nodeshot') format('svg');
+  }
+}
+ 
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "nodeshot";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .4em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-nodes:before { content: '\6e'; } /* 'n' */
+.icon-info-circle:before { content: '\69'; } /* 'i' */
+.icon-search:before { content: '\2d'; } /* '-' */
+.icon-user:before { content: '\e801'; } /* '' */
+.icon-user-add:before { content: '\e800'; } /* '' */
+.icon-plus-squared:before { content: '\2b'; } /* '+' */
+.icon-wrench:before { content: '\e802'; } /* '' */
+.icon-layer:before { content: '\6c'; } /* 'l' */
+.icon-off:before { content: '\30'; } /* '0' */
+.icon-menu:before { content: '\e804'; } /* '' */
+.icon-chart-pie:before { content: '\70'; } /* 'p' */
+.icon-chart-bar:before { content: '\62'; } /* 'b' */
+.icon-squares:before { content: '\73'; } /* 's' */
+.icon-globe:before { content: '\e803'; } /* '' */
