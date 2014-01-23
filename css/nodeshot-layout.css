@@ -322,3 +322,14 @@ article.center-stage{
 }
 
 /*#map-toolbar a:first-child{ border-top: 0 none }*/
+
+#map-toolbar .tooltip{
+    margin-top: -1px;
+    left: auto !important;
+    right: 57px !important;
+}
+#map-toolbar .tooltip-inner{
+    padding: 5px 12px !important;
+    font: normal 13px "Arial", sans-serif;
+    white-space: nowrap;
+}

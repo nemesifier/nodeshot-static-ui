@@ -35,6 +35,9 @@ $('#loading .icon-close').click(function(e){
 	$(this).parent().fadeOut(255);
 });
 
+// init tooltip
+$('#map-toolbar a').tooltip();
+
 // map
 $(window).resize(function(e){
 	setCollapsibleMainMenuMaxHeight();
