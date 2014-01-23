@@ -38,6 +38,8 @@ body article blockquote{
     font-size: 14px;
 }
 
+.overlay{ font-size: 15px }
+
 /* --- LARGE SCREENS --- */
 
 @media screen and (min-width: 1150px){

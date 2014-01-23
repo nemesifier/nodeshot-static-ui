@@ -137,3 +137,11 @@ body article blockquote{
     border-left: 4px solid red;
 }
 body article blockquote.style2{ border-left-color: #4195e5 }
+
+.overlay{
+    background-color: #000;
+    background-color: rgba(0,0,0,0.75);
+    color: #fff;
+}
+
+#map-toolbar{ background: #eaeaea }
