@@ -109,6 +109,15 @@
     margin: 0;
 }
 
+/* --- Content --- */
+
+body .breadcrumb{ margin: 0 }
+
+body > article{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
 /* --- TABLETS AND DESKTOPS --- */
 
 @media screen and (min-width: 767px){
@@ -148,6 +157,8 @@
         width: 210px;
         margin-right: 1.8%;
     }
+    
+    body > article{ padding-top: 15px; padding-bottom: 15px }
 }
 
 /* --- adjustments for small sizes  --- */
@@ -174,6 +185,7 @@
         background-size: 123px !important;
         margin: 2px 0 0 0;
     }
+    
     @media screen and (min-width: 0px) and (max-width: 380px){
         #top-bar h1 a{
             min-width: 100px;
@@ -240,11 +252,6 @@
     }
     
     #nav-bar .dropdown.open{ z-index: 1 }
-}
-
-/* --- Content --- */
-
-body > article{
-    padding-top: 25px;
-    padding-bottom: 25px;
+    
+    body > article{ padding-top: 10px; padding-bottom: 10px }
 }
