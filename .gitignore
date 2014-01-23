@@ -1,2 +1,4 @@
 *.zip
 fontello*
+._*
+.DS_Store

@@ -113,9 +113,10 @@
 
 body .breadcrumb{ margin: 0 }
 
-body > article{
-    padding-top: 25px;
-    padding-bottom: 25px;
+article.center-stage{
+    position: relative;
+    padding: 0;
+    margin: 25px 4.5%;
 }
 
 /* --- TABLETS AND DESKTOPS --- */
@@ -152,13 +153,15 @@ body > article{
     .center-stage,
     #top-bar,
     #nav-bar{ padding-left: 2%; padding-right: 2% }
+    article.center-stage{
+        padding: 0;
+        margin: 15px 2%
+    }
     
     #general-search{
         width: 210px;
         margin-right: 1.8%;
     }
-    
-    body > article{ padding-top: 15px; padding-bottom: 15px }
 }
 
 /* --- adjustments for small sizes  --- */
@@ -174,6 +177,10 @@ body > article{
     .center-stage,
     #top-bar,
     #nav-bar{ padding-left: 2.5%; padding-right: 2.5% }
+    article.center-stage{
+        padding: 0;
+        margin: 10px 2.5%;
+    }
     
     #top-bar{
         height: 50px;
@@ -252,6 +259,22 @@ body > article{
     }
     
     #nav-bar .dropdown.open{ z-index: 1 }
-    
-    body > article{ padding-top: 10px; padding-bottom: 10px }
+}
+
+.overlay{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 7px 16px;
+    border-radius: 7px;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.75);
+    color: #fff;
+    font-size: 15px
+}
+
+.loading .icon-close{
+    color: gray;
+    text-decoration: none;
+    cursor: pointer
 }

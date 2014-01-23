@@ -120,9 +120,7 @@ body > header{
 }
 
 #ns-top-nav-links ul.dropdown-menu a{ padding: 8px 20px }
-#ns-top-nav-links ul.dropdown-menu a:hover{
-    background-color: #000;
-}
+#ns-top-nav-links ul.dropdown-menu a:hover{ background-color: #000 }
 
 body article a{
     color: #d2482c;
@@ -138,6 +136,4 @@ body article blockquote{
     background-color: #ffffff;
     border-left: 4px solid red;
 }
-body article blockquote.style2{
-    border-left-color: #4195e5;
-}
+body article blockquote.style2{ border-left-color: #4195e5 }
