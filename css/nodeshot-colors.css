@@ -129,7 +129,10 @@ body article a{
     text-decoration: underline;
 }
 body article a:hover,
-body article a:focus{ text-decoration: none }
+body article a:focus{
+    color: #d2482c;
+    text-decoration: none;
+}
 
 body article blockquote{
     background-color: #ffffff;
