@@ -10,7 +10,7 @@ body{
     color: #303030;
 }
 
-#top-bar h1 a:focus{ outline: 1px dotted rgba(255, 255, 255, 0.7) }
+#top-bar a:focus{ outline: 1px dotted rgba(255, 255, 255, 0.7) }
 
 #top-bar{
     background-color: #de5c44;
@@ -58,7 +58,7 @@ body > header{
     color: #979696;
 }
 
-#top-bar a, .breadcrumb a{ color: #fff }
+#top-bar a, .breadcrumb a, body a, body a:hover{ color: #fff }
 /*.breadcrumb a{ text-decoration: underline }*/
 
 #top-bar > ul > li > a{
@@ -144,4 +144,17 @@ body article blockquote.style2{ border-left-color: #4195e5 }
     color: #fff;
 }
 
-#map-toolbar{ background: #eaeaea }
+.inverse{
+    background-color: #fff;
+    color: #4e4e4e;
+}
+
+.inverse a, .inverse a:hover, .inverse a:focus{ color: #4e4e4e }
+
+#map-toolbar{
+    background: #eaeaea;
+    border-left: 1px solid rgba(53, 53, 53, 0.3);
+    -webkit-box-shadow: -2px 0px 5px 0px rgba(50, 50, 50, 0.1);
+    -moz-box-shadow: -2px 0px 5px 0px rgba(50, 50, 50, 0.1);
+    box-shadow: -2px 0px 5px 0px rgba(50, 50, 50, 0.1);
+}

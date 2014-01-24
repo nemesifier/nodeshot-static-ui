@@ -72,8 +72,8 @@
         <nav id="nav-bar" class="navbar navbar-inverse" role="navigation">
             <div class="collapse navbar-collapse" id="ns-top-nav-links">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#"><span class="icon-squares"></span>Dashboard</a></li>
-                    <li><a href="#"><span class="icon-globe"></span>Map</a></li>
+                    <li><a href="#"><span class="icon-squares"></span>Dashboard</a></li>
+                    <li class="active"><a href="#"><span class="icon-globe"></span>Map</a></li>
                     <li><a href="#"><span class="icon-nodes"></span>Nodes</a></li>
                     <li><a href="#"><span class="icon-layer"></span>Layers</a></li>
                     <li><a href="#"><span class="icon-chart-bar"></span>Statistics</a></li>
@@ -118,8 +118,18 @@
             <a href="#" class="icon-3d smaller" title="Toggle 3D view" data-placement="left" data-delay="300"></a>
             <a href="#" class="icon-tools" title="Map tools" data-placement="left" data-delay="300"></a>
             <a href="#" class="icon-config" title="Map preferences" data-placement="left" data-delay="300"></a>
-            <a href="#" class="icon-list" title="Toggle legend" data-placement="left" data-delay="300"></a>
+            <a id="btn-legend" href="#" class="icon-list disabled" title="Toggle legend" data-placement="left" data-delay="300"></a>
         </aside>
+        
+        <div id="map-legend" class="overlay inverse">
+            <h5>Legend</h5>
+            <ul>
+                <li class="disabled"><a href="#"><span class="circle" style="background-color:#4283c5"></span>something</a><span class="stats">(234)</span></li>
+                <li><a href="#"><span class="circle" style="background:#ff7802"></span>potential</a><span class="stats">(934)</span></li>
+                <li><a href="#"><span class="circle" style="background:#138900"></span>active</a><span class="stats">(239)</span></li>
+            </ul>
+            <span class="icon-close"></span>
+        </div>
         
         <div id="map"></div>
     </div>

@@ -38,6 +38,35 @@ $('#loading .icon-close').click(function(e){
 // init tooltip
 $('#map-toolbar a').tooltip();
 
+// disable map stuff
+$('#map-legend a').click(function(e){
+	e.preventDefault();
+	
+	var li = $(this).parent();
+	
+	if (li.hasClass('disabled')) {
+		li.removeClass('disabled');
+	}
+	else{
+		li.addClass('disabled');
+	}
+	
+});
+
+$('#btn-legend, #map-legend .icon-close').click(function(e){
+	var legend = $('#map-legend'),
+		button = $('#btn-legend');
+	
+	legend.fadeToggle(250, function(){
+		if(legend.is(':visible')){
+			button.addClass('disabled');
+		}
+		else{
+			button.removeClass('disabled');
+		}
+	});
+});
+
 // map
 $(window).resize(function(e){
 	setCollapsibleMainMenuMaxHeight();
