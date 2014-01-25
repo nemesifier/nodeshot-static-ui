@@ -124,6 +124,12 @@ $.fn.getHiddenDimensions = function(){
     return dimensions;
 }
 
+clearPreloader = function(){
+    $('#preloader').fadeOut(255, function(){
+        $('body').removeAttr('style');
+    });
+}
+
 // map
 $(window).resize(function(e){
 	setCollapsibleMainMenuMaxHeight();
@@ -135,4 +141,6 @@ $(window).resize(function(e){
 	if($('#map').length){
         var map = L.mapbox.map('map-js', 'examples.map-9ijuk24y').setView([42.12, 12.45], 9);
     }
+    
+    clearPreloader();
 });
