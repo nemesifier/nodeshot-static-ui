@@ -266,7 +266,7 @@ article.center-stage{
     right: 0;
     top: 0;
     z-index: 999;
-    padding: 7px 16px;
+    padding: 15px;
     border-radius: 7px;
 }
 
@@ -278,21 +278,36 @@ article.center-stage{
     text-decoration: none;
 }
 
-.loading .icon-close{
-    position: static;
-    color: gray;
+.loading{
+    padding: 7px 14px;
+    cursor: default;
 }
+.loading .icon-loading{
+    font-size: 17px;
+    margin-right: 5px
+}
+.icon-loading:before,
+.icon-close:before{ margin: 0 !important }
+.loading .text{
+    position: relative;
+    top: -1px
+}
+
+.loading .icon-close{ position: static }
+
+#map .loading{ top: 25px; right: 25px }
 
 #map-container{
     position: relative;
     min-height: 100px
 }
 
-#map{
+#map, #map-js{
     position: absolute;
     width: 90%;
     height: 100%;
 }
+#map-js{ width: 100% }
 
 #map-toolbar{
     position: absolute;
@@ -306,9 +321,6 @@ article.center-stage{
 #map-toolbar a{
     display: block;
     height: 54px;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #d6d6d6;
-    color: #3d3d3d;
     text-decoration: none;
     text-align: center;
     font-size: 23px;
@@ -326,7 +338,6 @@ article.center-stage{
 
 #map-toolbar a:before{
     margin: 0;
-    /*line-height: 52px;*/
     width: auto;
 }
 
@@ -335,8 +346,6 @@ article.center-stage{
     cursor: default;
     background-color: transparent !important;
 }
-
-/*#map-toolbar a:first-child{ border-top: 0 none }*/
 
 #map-toolbar .tooltip{
     margin-top: -1px;
@@ -356,33 +365,18 @@ article.center-stage{
     bottom: 14px;
     padding: 12px 15px 10px;
     min-width: 120px;
-    
-    font-family: Arial;
-    font-size: 12px;
-    
-    -webkit-box-shadow: 0px 3px 25px 0px rgba(50, 50, 50, 0.4);
-    -moz-box-shadow:    0px 3px 25px 0px rgba(50, 50, 50, 0.4);
-    box-shadow:         0px 3px 25px 0px rgba(50, 50, 50, 0.4);
 }
 
 #map-legend h5{
     margin: 0 0 6px;
-    
-    text-transform: uppercase;
-    font-variant: small-caps;
-    font-family: Arial;
-    font-size: 10px;
-    font-weight: bold;
 }
 
 #map-legend .icon-close{
+    width: 20px;
+    height: 20px;
     top: 8px;
-    right: 5px;
-}
-
-#map-legend a:hover{
-    text-decoration: none;
-    color: #000;
+    right: 10px;
+    text-align: center;
 }
 
 #map-legend ul{
@@ -405,8 +399,21 @@ article.center-stage{
 
 #map-legend .stats{
     float: right;
-    color: #7f7f7f !important;
     margin-left: 7px
 }
 
-.disabled{ opacity: 0.4 }
+.modal-dialog button{ margin: 0 0 0 12px }
+
+.modal-dialog .btn{
+    min-width: 55px;
+    padding: 3px 16px;
+}
+
+.modal-slim{ padding: 16px 25px }
+
+/* automatically set width and center dialog */
+.modal.autocenter .modal-dialog{
+    position: absolute;
+    left: 0;
+    width: auto;
+}

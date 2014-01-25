@@ -31,6 +31,7 @@ article{
 body > article > *:first-child{ margin-top: 0 }
 
 body article h1{ letter-spacing: -1.25px }
+body article h2{ letter-spacing: -1px }
 
 body article blockquote{
     padding-top: 15px;
@@ -39,6 +40,19 @@ body article blockquote{
 }
 
 .loading{ font-size: 15px }
+
+#map-legend{
+    font-family: Arial;
+    font-size: 12px;
+}
+
+#map-legend h5{
+    text-transform: uppercase;
+    font-variant: small-caps;
+    font-family: Arial;
+    font-size: 10px;
+    font-weight: bold;
+}
 
 /* --- LARGE SCREENS --- */
 

@@ -10,20 +10,3 @@
 #general-search{
     background: #fff url(../images/search-icon.png) no-repeat scroll 97% 50%;
 }
-
-/*.signup, .signin, .usericon, .on-off, .wrench{*/
-/*    background: transparent url(../images/user-add-icon.png) no-repeat scroll 23px 50%;*/
-/*}*/
-/**/
-/*.signin, .usericon{*/
-/*    background-image: url(../images/user-icon.png);*/
-/*}*/
-
-.notifications{
-    /*background: transparent url(../images/world-icon.png) no-repeat scroll 50% 50%;*/
-}
-/**/
-/*.on-off{ background-image: url(../images/on-off-icon.png) }*/
-/*.wrench{ background-image: url(../images/wrench-icon.png) }*/
-
-/*#nav-bar a.squares{ background-image: url(../images/nav/squares.png) }*/

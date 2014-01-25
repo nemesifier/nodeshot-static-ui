@@ -67,6 +67,63 @@ $('#btn-legend, #map-legend .icon-close').click(function(e){
 	});
 });
 
+// automatically center modal depending on its width
+$('.modal.autocenter').on('show.bs.modal', function(e) {
+    var dialog = $(this).find('.modal-dialog'),
+        dialog_dimensions = dialog.getHiddenDimensions();
+    
+    dialog.css({
+        width: dialog_dimensions.width,
+        right: 0
+    });
+    
+    // vertically align to center
+    dialog.css('top', $(window).height()/2.1 - dialog_dimensions.height);
+})
+
+// get width of an hidden element
+$.fn.getHiddenDimensions = function(){
+    var self = $(this);
+    if(self.is(':visible')){
+        throw('element is not hidden')
+    }
+    
+    var hidden = self,  // this element is hidden
+        parents = self.parents(':hidden');  // look for hidden parent elements
+        
+    // if any hidden parent element
+    if(parents.length){
+        // add to hidden collection
+        hidden = $().add(parents).add(hidden);
+    }
+    
+    /*
+     trick all the hidden elements in a way that
+     they wont be shown but we'll be able to calculate their width
+    */
+    hidden.css({
+        position: 'absolute',
+        visibility: 'hidden',
+        display: 'block'
+    });
+    
+    // store width of current element
+    var dimensions = {
+        width: self.outerWidth(),
+        height: self.outerHeight()
+    }
+    
+    // reset hacked css on hidden elements
+    hidden.css({
+        position: '',
+        visibility: '',
+        display: ''
+    });
+    
+    // return width
+    return dimensions;
+}
+
 // map
 $(window).resize(function(e){
 	setCollapsibleMainMenuMaxHeight();
@@ -75,5 +132,7 @@ $(window).resize(function(e){
 	setCollapsibleMainMenuMaxHeight();
 	setMapDimensions();
 	
-	var map = L.mapbox.map('map', 'examples.map-9ijuk24y').setView([42.12, 12.45], 9);
+	if($('#map').length){
+        var map = L.mapbox.map('map-js', 'examples.map-9ijuk24y').setView([42.12, 12.45], 9);
+    }
 });
