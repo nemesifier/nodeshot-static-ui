@@ -92,6 +92,11 @@
 #nav-bar .collapse{ padding: 0 3px }
 
 /* main links */
+#ns-top-nav-links{
+    position: relative;
+    z-index: 1002;  /* for mobile menu */
+}
+
 #ns-top-nav-links > ul > li > a{
     border-radius: 6px;
     margin-top: 7px;
@@ -108,6 +113,8 @@
     padding: 0;
     margin: 0;
 }
+
+#toggle-toolbar{ display: none !important }
 
 /* --- Content --- */
 
@@ -198,6 +205,15 @@ article.center-stage{
             min-width: 100px;
             background-size: 100px !important;
         }
+        .modal.enlarge-on-mobile{
+            background-color: #fff !important;
+        }
+        
+        .modal.enlarge-on-mobile .modal-dialog{
+            top: 0 !important;
+            box-shadow: none;
+            border: 0 none;
+        }
     }
     
     #general-search{
@@ -259,6 +275,25 @@ article.center-stage{
     }
     
     #nav-bar .dropdown.open{ z-index: 1 }
+    
+    #map-toolbar{ display: none }
+    #toggle-toolbar{ display: block !important }
+    .user-dialog .icon-close{ font-size: 18px }
+    
+    body > article > h1,
+    body > article h2{ letter-spacing: -3px; word-spacing: -1px }
+}
+
+/* Extra small adjustments */
+@media screen and (min-width: 0px) and (max-width: 580px){
+    .modal.enlarge-on-mobile{
+        background-color: rgba(255,255,255,0.90);
+    }
+    
+    .modal.enlarge-on-mobile .modal-dialog{
+        box-shadow: none;
+        border-color: rgba(0,0,0,0.1);
+    }
 }
 
 .overlay{
@@ -275,7 +310,7 @@ article.center-stage{
     top: 10px;
     right: 10px;
     cursor: pointer;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .loading{
@@ -309,7 +344,8 @@ article.center-stage{
 }
 #map-js{ width: 100% }
 
-#map-toolbar{
+#map-toolbar,
+#toggle-toolbar{
     position: absolute;
     top: 0;
     right: 0;
@@ -318,7 +354,14 @@ article.center-stage{
     height: 80%;
 }
 
-#map-toolbar a{
+#toggle-toolbar{
+    top: auto;
+    bottom: 0;
+    z-index: 1001;
+}
+
+#map-toolbar a,
+#toggle-toolbar{
     display: block;
     height: 54px;
     text-decoration: none;
@@ -329,7 +372,8 @@ article.center-stage{
 
 #map-toolbar a.smaller{ font-size: 15px }
 
-#map-toolbar a:before{
+#map-toolbar a:before,
+#toggle-toolbar:before{
     margin: 0;
     width: auto;
 }
@@ -449,7 +493,13 @@ article.center-stage{
     display: block;
     width: 100%;
     margin: 0;
-    padding: 4px 0 !important;
+    padding: 6px 0 !important;
+}
+
+.user-dialog .icon-close{
+    top: 0;
+    right: 0;
+    padding: 7px 12px
 }
 
 .social-buttons,

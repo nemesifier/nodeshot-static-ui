@@ -26,7 +26,13 @@ var setMapDimensions = function(){
 	var height = $(window).height() - $('body > header').height();
 	$('#map-container, #map-toolbar').height(height);
 	
-	var width = $(window).width() - $('#map-toolbar').width();
+    var map_toolbar = $('#map-toolbar'),
+        width = $(window).width();
+    
+    // take in consideration map toolbar if visible
+    if(map_toolbar.is(':visible')){
+        width = width - $('#map-toolbar').width();
+    }
 	$('#map').width(width);
 }
 
@@ -36,7 +42,7 @@ $('#loading .icon-close').click(function(e){
 });
 
 // init tooltip
-$('#map-toolbar a').tooltip();
+$('#map-toolbar a, .hastip').tooltip();
 
 // disable map stuff
 $('#map-legend a').click(function(e){
@@ -168,6 +174,13 @@ $('#map-toolbar .icon-pin-add').click(function(e){
     });
 });
 
+// show map toolbar on mobile
+$('#toggle-toolbar').click(function(e){
+    e.preventDefault();
+    $('#map-toolbar').toggle();
+    setMapDimensions();
+});
+
 // map
 $(window).resize(function(e){
 	setCollapsibleMainMenuMaxHeight();
@@ -181,6 +194,4 @@ $(window).resize(function(e){
     }
     
     clearPreloader();
-    
-    $('#signupModal').modal('show');
 });

@@ -45,8 +45,8 @@
                 <li>
                     <a href="#" class="icon-search">&nbsp;</a>
                 </li>
-                <li><a href="#"><span class="icon-user-add"></span><span class="text">Sign up</span></a></li>
-                <li><a href="#"><span class="icon-user"></span><span class="text">Sign in</span></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#signupModal"><span class="icon-user-add"></span><span class="text">Sign up</span></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#signinModal"><span class="icon-user"></span><span class="text">Sign in</span></a></li>
                 <!--<li>
                     <a href="#" class="notifications">
                         <span class="icon-globe">&nbsp;</span>
@@ -126,6 +126,8 @@
             <a id="btn-legend" href="#" class="icon-list disabled" title="Toggle legend" data-placement="left" data-delay="300"></a>
         </aside>
         
+        <a id="toggle-toolbar" href="#" class="glyphicon glyphicon-chevron-up"></a>
+        
         <div id="map-legend" class="overlay inverse">
             <h5>Legend</h5>
             <ul>
@@ -133,7 +135,7 @@
                 <li><a href="#"><span class="circle" style="background:#ff7802"></span>potential</a><span class="stats">(934)</span></li>
                 <li><a href="#"><span class="circle" style="background:#138900"></span>active</a><span class="stats">(239)</span></li>
             </ul>
-            <span class="icon-close"></span>
+            <a class="icon-close" href="#"></a>
         </div>
         
         <div id="map">
@@ -141,7 +143,7 @@
             <div id="loading" class="overlay loading">
                 <span class="icon-loading animate-spin"></span>
                 <span class="text">Loading &hellip;</span>
-                <a class="icon-close"></a>
+                <a class="icon-close" href="#"></a>
             </div>
             
             <div id="step1" tabindex="-1" role="dialog" aria-labelledby="step1Label" aria-hidden="true"
@@ -159,8 +161,8 @@
         </div>
     </div>
     
-    <!-- Signup -->
-    <div class="modal fade narrow autocenter" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <!-- Sign up -->
+    <div class="modal fade narrow autocenter enlarge-on-mobile" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-content modal-body inverse user-dialog">
             
             <p class="text">By signing up to this service you agree to our <a href="#">privacy policy</a></p>
@@ -191,30 +193,95 @@
             </p>
             
             <form action="" method="post">
-                <p class="input-group input-group-sm">
-                    <input class="form-control" type="text" name="username" placeholder="Username">
+                <p class="input-group">
+                    <input class="form-control hastip" type="text" name="username" placeholder="Username"
+                           title="example tooltip" data-placement="top" data-trigger="focus" data-trigger="focus">
                     <span class="input-group-addon icon-user"></span>
                 </p>
                 
-                <p class="input-group input-group-sm">
-                    <input class="form-control" type="email" name="email" placeholder="Email">
+                <p class="input-group">
+                    <input class="form-control hastip" type="email" name="email" placeholder="Email"
+                           title="example tooltip" data-placement="top" data-trigger="focus">
                     <span class="input-group-addon icon-mail"></span>
                 </p>
                 
-                <p class="input-group input-group-sm">
-                    <input class="form-control" type="password" name="password" placeholder="Password">
+                <p class="input-group">
+                    <input class="form-control hastip" type="password" name="password" placeholder="Password"
+                           title="example tooltip" data-placement="top" data-trigger="focus">
                     <span class="input-group-addon icon-lock"></span>
                 </p>
                 
-                <p class="input-group input-group-sm">
-                    <input class="form-control" type="password" name="password2" placeholder="Confirm password">
+                <p class="input-group">
+                    <input class="form-control hastip" type="password" name="password2" placeholder="Confirm password"
+                           title="example tooltip" data-placement="top" data-trigger="focus">
                     <span class="input-group-addon icon-lock"></span>
                 </p>
                 
                 <button class="btn btn-default">Sign up</button>
             </form>
             
-            <p class="text">Already have an account? <a href="#">Sign in</a>
+            <p class="text">Already have an account? <a href="#">Sign in</a></p>
+            
+            <a class="icon-close" data-dismiss="modal" href="#"></a>
+        </div>
+    </div>
+    
+    <!-- Sign in -->
+    <div class="modal fade narrow autocenter enlarge-on-mobile" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-content modal-body inverse user-dialog">
+            
+            <p class="social-buttons">
+                <a href="#" class="btn btn-social btn-facebook">
+                    <span class="icon icon-facebook"></span>
+                    <span class="text">Sign in with Facebook</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+                
+                <a href="#" class="btn btn-social btn-google">
+                    <span class="icon icon-google"></span>
+                    <span class="text">Sign in with Google</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+                
+                <a href="#" class="btn btn-social btn-github">
+                    <span class="icon icon-github"></span>
+                    <span class="text">Sign in with Github</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+            </p>
+            
+            <p class="separator">
+                <span class="line"></span>
+                <span class="text">or</span>
+            </p>
+            
+            <form action="" method="post">
+                <p class="input-group">
+                    <input class="form-control hastip" type="text" name="username" placeholder="Username or Email"
+                           title="example tooltip" data-placement="top" data-trigger="focus">
+                    <span class="input-group-addon icon-user"></span>
+                </p>
+                
+                <p class="input-group">
+                    <input class="form-control hastip" type="password" name="password" placeholder="Password"
+                           title="example tooltip" data-placement="top" data-trigger="focus">
+                    <span class="input-group-addon icon-lock"></span>
+                </p>
+                
+                <p class="checkbox text text-left">
+                    <label><input type="checkbox" name="remember">Stay signed in</label>
+                </p>
+                
+                <p><button class="btn btn-default">Sign in</button></p>
+                
+                
+            </form>
+            
+            <p class="text"><a href="#">Forgot your password?</a></p>
+            
+            <p class="text">Don't have an account yet? <a href="#">Sign up</a></p>
+            
+            <a class="icon-close" data-dismiss="modal" href="#"></a>
         </div>
     </div>
 
