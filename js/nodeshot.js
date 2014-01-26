@@ -130,6 +130,38 @@ clearPreloader = function(){
     });
 }
 
+// add node
+$('#map-toolbar .icon-pin-add').click(function(e){
+    $('#map-legend .icon-close').trigger('click');
+    
+    var dialog = $('#step1'),
+        dialog_dimensions = dialog.getHiddenDimensions();
+    
+    dialog.css({
+        width: dialog_dimensions.width,
+        right: 0
+    });
+    
+    // vertically align to center
+    //dialog.css('top', $(window).height()/2.1 - dialog_dimensions.height);
+    dialog.fadeIn(255);
+    
+    $('#step1 button').click(function(e){
+        $('#step1').hide();
+        var dialog = $('#step2'),
+        dialog_dimensions = dialog.getHiddenDimensions();
+    
+        dialog.css({
+            width: dialog_dimensions.width,
+            right: 0
+        });
+        
+        // vertically align to center
+        //dialog.css('top', $(window).height()/2.1 - dialog_dimensions.height);
+        dialog.fadeIn(255);
+    });
+});
+
 // map
 $(window).resize(function(e){
 	setCollapsibleMainMenuMaxHeight();

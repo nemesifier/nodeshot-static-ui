@@ -406,16 +406,31 @@ article.center-stage{
 
 .modal-dialog .btn{
     min-width: 55px;
-    padding: 3px 16px;
+    padding: 2px 16px;
+    vertical-align: baseline;
 }
 
 .modal-slim{ padding: 16px 25px }
+.modal-x-slim{ padding: 11px 20px }
 
 /* automatically set width and center dialog */
 .modal.autocenter .modal-dialog{
     position: absolute;
     left: 0;
     width: auto;
+    margin: 0 auto;
+}
+
+.modal-dialog.autocenter{
+    display: none;
+    width: auto;
+    margin: 0 auto;
+    left: 0;
+}
+
+.modal-dialog.bottom{
+    position: absolute;
+    bottom: 30px
 }
 
 #preloader{

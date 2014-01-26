@@ -183,6 +183,7 @@ body article blockquote.style2{ border-left-color: #4195e5 }
     color: #fff;
     border: 0 none;
     border-top: 1px solid #6fb743;
+    border-bottom: 1px solid #15470c;
     outline: 0 none;
 }
 
@@ -206,6 +207,7 @@ body article blockquote.style2{ border-left-color: #4195e5 }
     color: #fff;
     border: 0 none;
     border-top: 1px solid #888b92;
+    border-bottom: 1px solid #4b4f58;
     outline: 0 none;
 }
 
