@@ -72,13 +72,19 @@ $('.modal.autocenter').on('show.bs.modal', function(e) {
     var dialog = $(this).find('.modal-dialog'),
         dialog_dimensions = dialog.getHiddenDimensions();
     
+    console.log(dialog_dimensions);
+    
     dialog.css({
         width: dialog_dimensions.width,
         right: 0
     });
     
     // vertically align to center
-    dialog.css('top', $(window).height()/2.1 - dialog_dimensions.height);
+    new_height = ($(window).height() - dialog_dimensions.height) /2.1
+    // ensure new position is greater than zero
+    new_height = new_height > 0 ? new_height : 0;
+    // set new height
+    dialog.css('top', new_height);
 })
 
 // get width of an hidden element
@@ -175,4 +181,6 @@ $(window).resize(function(e){
     }
     
     clearPreloader();
+    
+    $('#signupModal').modal('show');
 });

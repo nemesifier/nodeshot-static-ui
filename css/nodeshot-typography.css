@@ -3,7 +3,9 @@
  * keep here all instructions related to fonts and text
  */
 
-body{
+body,
+.form-control
+{
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
 }
@@ -52,6 +54,10 @@ body article blockquote{
     font-family: Arial;
     font-size: 10px;
     font-weight: bold;
+}
+
+.user-dialog .form-control{
+    font-size: 13px
 }
 
 /* --- LARGE SCREENS --- */

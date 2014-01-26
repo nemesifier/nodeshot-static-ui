@@ -115,8 +115,6 @@
         </nav>
     </header>
     
-    
-    
     <div id="map-container">
         <aside id="map-toolbar">
             <a href="#" class="icon-pin-add" data-toggle="tooltip" title="Add new node" data-placement="left" data-delay="300"></a>
@@ -149,15 +147,74 @@
             <div id="step1" tabindex="-1" role="dialog" aria-labelledby="step1Label" aria-hidden="true"
                 class="modal-dialog modal-content modal-body modal-x-slim autocenter bottom">
                 <span class="message">Click on the map to indicate the location</span>
-                <button type="button" class="btn btn-ignore">cancel</button>
+                <button type="button" class="btn btn-default">cancel</button>
             </div>
             
             <div id="step2" tabindex="-1" role="dialog" aria-labelledby="step2Label" aria-hidden="true"
                 class="modal-dialog modal-content modal-body modal-x-slim autocenter bottom">
                 <span class="message">Drag to adjust</span>
                 <button type="button" class="btn btn-success">confirm</button>
-                <button type="button" class="btn btn-ignore">cancel</button>
+                <button type="button" class="btn btn-default">cancel</button>
             </div>
+        </div>
+    </div>
+    
+    <!-- Signup -->
+    <div class="modal fade narrow autocenter" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-content modal-body inverse user-dialog">
+            
+            <p class="text">By signing up to this service you agree to our <a href="#">privacy policy</a></p>
+            
+            <p class="social-buttons">
+                <a href="#" class="btn btn-social btn-facebook">
+                    <span class="icon icon-facebook"></span>
+                    <span class="text">Sign up with Facebook</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+                
+                <a href="#" class="btn btn-social btn-google">
+                    <span class="icon icon-google"></span>
+                    <span class="text">Sign up with Google</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+                
+                <a href="#" class="btn btn-social btn-github">
+                    <span class="icon icon-github"></span>
+                    <span class="text">Sign up with Github</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+            </p>
+            
+            <p class="separator">
+                <span class="line"></span>
+                <span class="text">or</span>
+            </p>
+            
+            <form action="" method="post">
+                <p class="input-group input-group-sm">
+                    <input class="form-control" type="text" name="username" placeholder="Username">
+                    <span class="input-group-addon icon-user"></span>
+                </p>
+                
+                <p class="input-group input-group-sm">
+                    <input class="form-control" type="email" name="email" placeholder="Email">
+                    <span class="input-group-addon icon-mail"></span>
+                </p>
+                
+                <p class="input-group input-group-sm">
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                    <span class="input-group-addon icon-lock"></span>
+                </p>
+                
+                <p class="input-group input-group-sm">
+                    <input class="form-control" type="password" name="password2" placeholder="Confirm password">
+                    <span class="input-group-addon icon-lock"></span>
+                </p>
+                
+                <button class="btn btn-default">Sign up</button>
+            </form>
+            
+            <p class="text">Already have an account? <a href="#">Sign in</a>
         </div>
     </div>
 
