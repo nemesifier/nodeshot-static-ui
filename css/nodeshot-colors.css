@@ -336,14 +336,14 @@ input.error, .error input{
     box-shadow:         0px 3px 25px 0px rgba(50, 50, 50, 0.4);
 }
 
-#map-legend a:hover,
-#map-legend a:focus{
+#map-legend.inverse a:hover,
+#map-legend.inverse a:focus{
     text-decoration: none;
     color: #000;
     outline: 0 none
 }
 
-#map-legend .icon-close:hover,
+#map-legend.inverse .icon-close:hover,
 .user-dialog .icon-close:hover,
 .inverse .icon-close:focus{
     color: #000

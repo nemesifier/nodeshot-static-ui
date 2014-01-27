@@ -136,7 +136,10 @@ $.fn.getHiddenDimensions = function(){
 
 clearPreloader = function(){
     $('#preloader').fadeOut(255, function(){
-        $('body').removeAttr('style');
+		// clear overflow hidden except if map view
+		if(!$('#map').length) {
+			$('body').removeAttr('style');
+		}
     });
 }
 
@@ -186,10 +189,6 @@ $(window).resize(function(e){
 }).load(function(e){
 	setCollapsibleMainMenuMaxHeight();
 	setMapDimensions();
-	
-	if($('#map').length){
-        var map = L.mapbox.map('map-js', 'examples.map-9ijuk24y').setView([42.12, 12.45], 9);
-    }
     
     clearPreloader();
 });

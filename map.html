@@ -128,18 +128,19 @@
         
         <a id="toggle-toolbar" href="#" class="glyphicon glyphicon-chevron-up"></a>
         
-        <div id="map-legend" class="overlay inverse">
-            <h5>Legend</h5>
-            <ul>
-                <li class="disabled"><a href="#"><span class="circle" style="background-color:#4283c5"></span>something</a><span class="stats">(234)</span></li>
-                <li><a href="#"><span class="circle" style="background:#ff7802"></span>potential</a><span class="stats">(934)</span></li>
-                <li><a href="#"><span class="circle" style="background:#138900"></span>active</a><span class="stats">(239)</span></li>
-            </ul>
-            <a class="icon-close" href="#"></a>
-        </div>
-        
         <div id="map">
             <div id="map-js"></div>
+            
+            <div id="map-legend" class="overlay inverse">
+                <h5>Legend</h5>
+                <ul>
+                    <li class="disabled"><a href="#"><span class="circle" style="background-color:#4283c5"></span>something</a><span class="stats">(234)</span></li>
+                    <li><a href="#"><span class="circle" style="background:#ff7802"></span>potential</a><span class="stats">(934)</span></li>
+                    <li><a href="#"><span class="circle" style="background:#138900"></span>active</a><span class="stats">(239)</span></li>
+                </ul>
+                <a class="icon-close" href="#"></a>
+            </div>
+            
             <div id="loading" class="overlay loading">
                 <span class="icon-loading animate-spin"></span>
                 <span class="text">Loading &hellip;</span>
@@ -287,5 +288,10 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/nodeshot.js"></script>
+    <script>
+        $(window).load(function(e){
+            var map = L.mapbox.map('map-js', 'examples.map-9ijuk24y').setView([42.12, 12.45], 9);
+        });
+    </script>
 </body>
 </html>

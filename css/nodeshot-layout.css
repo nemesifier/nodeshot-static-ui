@@ -344,6 +344,18 @@ article.center-stage{
 }
 #map-js{ width: 100% }
 
+#cesiumContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    font-family: sans-serif;
+}
+
 #map-toolbar,
 #toggle-toolbar{
     position: absolute;
@@ -415,6 +427,15 @@ article.center-stage{
     bottom: 14px;
     padding: 12px 15px 10px;
     min-width: 120px;
+}
+
+#map-legend.right{
+    left: auto;
+    right: 14px;
+}
+
+.cesium #map-legend.right{
+    right: 16px;
 }
 
 #map-legend h5{
