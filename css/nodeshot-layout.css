@@ -384,6 +384,12 @@ article.center-stage{
     background-color: transparent !important;
 }
 
+.tooltip-inner{
+    padding: 10px 12px !important;
+    max-width: 250px !important;
+    font: normal 13px/18px "Arial", sans-serif;
+}
+
 #map-toolbar .tooltip{
     margin-top: -1px;
     left: auto !important;
@@ -391,8 +397,15 @@ article.center-stage{
 }
 #map-toolbar .tooltip-inner{
     padding: 5px 12px !important;
-    font: bold 13px "Arial", sans-serif;
+    font-weight: bold;
     white-space: nowrap;
+}
+/* adapt for user dialog */
+.user-dialog .tooltip-inner{
+    padding: 7px 12px !important;
+    max-width: 237px !important;
+    text-align: left;
+    font-size: 12px
 }
 
 #map-legend{
@@ -472,7 +485,7 @@ article.center-stage{
 }
 
 .modal.narrow .modal-dialog{
-    width: 340px;
+    width: 328px;
     padding: 25px 44px;
 }
 

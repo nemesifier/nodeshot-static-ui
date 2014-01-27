@@ -78,8 +78,6 @@ $('.modal.autocenter').on('show.bs.modal', function(e) {
     var dialog = $(this).find('.modal-dialog'),
         dialog_dimensions = dialog.getHiddenDimensions();
     
-    console.log(dialog_dimensions);
-    
     dialog.css({
         width: dialog_dimensions.width,
         right: 0
