@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nodeshot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="css/bootstrap-theme.min.css" rel="stylesheet">-->
+    <link href="css/nodeshot-layout.css" rel="stylesheet">
+    <link href="css/nodeshot-colors.css" rel="stylesheet">
+    <link href="css/nodeshot-backgrounds.css" rel="stylesheet">
+    <link href="css/nodeshot-typography.css" rel="stylesheet">
+    <link href="css/nodeshot-backgrounds.css" rel="stylesheet">
+    <link href="css/nodeshot-typography.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/nodeshot.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="js/cesium/Widgets/widgets.css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="css/nodeshot-ie7.css">
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/cesium/Cesium.js"></script>
+</head>
+<body style="overflow:hidden">
+    <div id="preloader">
+        <p class="inner">
+            <span class="icon-loading animate-spin"></span> Loading &hellip;
+        </p>
+    </div>
+    <header>
+        <nav id="top-bar">
+            <h1><a href="#">Nodeshot</a></h1>
+            
+            <input type="text" id="general-search" placeholder="Search for data">
+            
+            <ul>
+                <li>
+                    <a href="#" class="icon-search">&nbsp;</a>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#signupModal"><span class="icon-user-add"></span><span class="text">Sign up</span></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#signinModal"><span class="icon-user"></span><span class="text">Sign in</span></a></li>
+                <!--<li>
+                    <a href="#" class="notifications">
+                        <span class="icon-globe">&nbsp;</span>
+                        &nbsp;
+                        <span class="bg">3</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="icon-user"></span>
+                        <span class="text" id="username-js">nemesisdesign</span>
+                        <span class="caret"></span>
+                    </a>
+                    
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="icon-user"></span>My profile</a></li>
+                        <li><a href="#"><span class="icon-wrench"></span>Settings</a></li>
+                        <li><a href="#"><span class="icon-off"></span>Logout</a></li>
+                    </ul>
+                </li>-->
+                <li>
+                    <a href="#" class="icon-menu"
+                       data-toggle="collapse"
+                       data-target="#ns-top-nav-links">&nbsp;</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="nav-bar" class="navbar navbar-inverse" role="navigation">
+            <div class="collapse navbar-collapse" id="ns-top-nav-links">
+                <ul class="nav navbar-nav">
+                    <li><a href="#"><span class="icon-squares"></span>Dashboard</a></li>
+                    <li class="active"><a href="#"><span class="icon-globe"></span>Map</a></li>
+                    <li><a href="#"><span class="icon-nodes"></span>Nodes</a></li>
+                    <li><a href="#"><span class="icon-layer"></span>Layers</a></li>
+                    <li><a href="#"><span class="icon-chart-bar"></span>Statistics</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="icon-info-circle"></span>About
+                            <span class="caret"></span>
+                        </a>
+            
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="icon-plus-squared"></span>More
+                            <span class="caret"></span>
+                        </a>
+            
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div id="map-container">
+        <aside id="map-toolbar">
+            <a href="#" class="icon-pin-add" data-toggle="tooltip" title="Add new node" data-placement="left" data-delay="300"></a>
+            <a href="#" class="icon-search" data-toggle="tooltip" title="Search address" data-placement="left" data-delay="300"></a>
+            <a href="#" class="icon-layer-2" title="Filter layers" data-placement="left" data-delay="300"></a>
+            <a href="#" class="icon-3d smaller" title="Toggle 3D view" data-placement="left" data-delay="300"></a>
+            <a href="#" class="icon-tools" title="Map tools" data-placement="left" data-delay="300"></a>
+            <a href="#" class="icon-config" title="Map preferences" data-placement="left" data-delay="300"></a>
+            <a id="btn-legend" href="#" class="icon-list disabled" title="Toggle legend" data-placement="left" data-delay="300"></a>
+        </aside>
+        
+        <a id="toggle-toolbar" href="#" class="glyphicon glyphicon-chevron-up"></a>
+        
+        <div id="map">
+            <div id="map-js"></div>
+            
+            <div id="map-legend" class="overlay right">
+                <h5>Legend</h5>
+                <ul>
+                    <li class="disabled"><a href="#"><span class="circle" style="background-color:#4283c5"></span>something</a><span class="stats">(234)</span></li>
+                    <li><a href="#"><span class="circle" style="background:#ff7802"></span>potential</a><span class="stats">(934)</span></li>
+                    <li><a href="#"><span class="circle" style="background:#138900"></span>active</a><span class="stats">(239)</span></li>
+                </ul>
+                <a class="icon-close" href="#"></a>
+            </div>
+            
+            <div id="step1" tabindex="-1" role="dialog" aria-labelledby="step1Label" aria-hidden="true"
+                class="modal-dialog modal-content modal-body modal-x-slim autocenter bottom">
+                <span class="message">Click on the map to indicate the location</span>
+                <button type="button" class="btn btn-default">cancel</button>
+            </div>
+            
+            <div id="step2" tabindex="-1" role="dialog" aria-labelledby="step2Label" aria-hidden="true"
+                class="modal-dialog modal-content modal-body modal-x-slim autocenter bottom">
+                <span class="message">Drag to adjust</span>
+                <button type="button" class="btn btn-success">confirm</button>
+                <button type="button" class="btn btn-default">cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sign up -->
+    <div class="modal fade narrow autocenter enlarge-on-mobile" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-content modal-body inverse user-dialog">
+            
+            <p class="text">By signing up to this service you agree to our <a href="#">privacy policy</a></p>
+            
+            <p class="social-buttons">
+                <a href="#" class="btn btn-social btn-facebook">
+                    <span class="icon icon-facebook"></span>
+                    <span class="text">Sign up with Facebook</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+                
+                <a href="#" class="btn btn-social btn-google">
+                    <span class="icon icon-google"></span>
+                    <span class="text">Sign up with Google</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+                
+                <a href="#" class="btn btn-social btn-github">
+                    <span class="icon icon-github"></span>
+                    <span class="text">Sign up with Github</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+            </p>
+            
+            <p class="separator">
+                <span class="line"></span>
+                <span class="text">or</span>
+            </p>
+            
+            <form action="" method="post">
+                <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus" data-trigger="focus">
+                    <input class="form-control" type="text" name="username" placeholder="Username">
+                    <span class="input-group-addon icon-user"></span>
+                </p>
+                
+                <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
+                    <input class="form-control " type="email" name="email" placeholder="Email">
+                    <span class="input-group-addon icon-mail"></span>
+                </p>
+                
+                <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                    <span class="input-group-addon icon-lock"></span>
+                </p>
+                
+                <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
+                    <input class="form-control" type="password" name="password2" placeholder="Confirm password">
+                    <span class="input-group-addon icon-lock"></span>
+                </p>
+                
+                <button class="btn btn-default">Sign up</button>
+            </form>
+            
+            <p class="text">Already have an account? <a href="#">Sign in</a></p>
+            
+            <a class="icon-close" data-dismiss="modal" href="#"></a>
+        </div>
+    </div>
+    
+    <!-- Sign in -->
+    <div class="modal fade narrow autocenter enlarge-on-mobile" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-content modal-body inverse user-dialog">
+            
+            <p class="social-buttons">
+                <a href="#" class="btn btn-social btn-facebook">
+                    <span class="icon icon-facebook"></span>
+                    <span class="text">Sign in with Facebook</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+                
+                <a href="#" class="btn btn-social btn-google">
+                    <span class="icon icon-google"></span>
+                    <span class="text">Sign in with Google</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+                
+                <a href="#" class="btn btn-social btn-github">
+                    <span class="icon icon-github"></span>
+                    <span class="text">Sign in with Github</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+            </p>
+            
+            <p class="separator">
+                <span class="line"></span>
+                <span class="text">or</span>
+            </p>
+            
+            <form action="" method="post">
+                <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
+                    <input class="form-control" type="text" name="username" placeholder="Username or Email">
+                    <span class="input-group-addon icon-user"></span>
+                </p>
+                
+                <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                    <span class="input-group-addon icon-lock"></span>
+                </p>
+                
+                <p class="checkbox text text-left">
+                    <label class="hastip" data-placement="top" title="For your protection, keep this checked only on devices you use regularly">
+                        <input type="checkbox" name="remember">
+                        Stay signed in
+                    </label>
+                </p>
+                
+                <p><button class="btn btn-default">Sign in</button></p>
+                
+                
+            </form>
+            
+            <p class="text"><a href="#">Forgot your password?</a></p>
+            
+            <p class="text">Don't have an account yet? <a href="#">Sign up</a></p>
+            
+            <a class="icon-close" data-dismiss="modal" href="#"></a>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/nodeshot.js"></script>
+    
+    <script>
+        $(window).load(function(e){
+            var cesiumWidget = new Cesium.CesiumWidget('map-js');
+        });
+    </script>
+</body>
+</html>
