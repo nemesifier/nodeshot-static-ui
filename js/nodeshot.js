@@ -36,13 +36,36 @@ var setMapDimensions = function(){
 	$('#map').width(width);
 }
 
+var toggleLoading = function(){
+	$('#loading').fadeToggle(255);
+}
+
 // close loading
 $('#loading .icon-close').click(function(e){
-	$(this).parent().fadeOut(255);
+	toggleLoading();
 });
 
 // init tooltip
 $('#map-toolbar a, .hastip').tooltip();
+
+$('#map-toolbar a').click(function(e){
+	e.preventDefault();
+	
+	var button = $(this),
+		panel_id = button.attr('data-panel'),
+		panel = $('#' + panel_id);
+	
+	if (panel.is(':visible')) {
+		panel.fadeOut(255);
+		button.removeClass('active');
+	}
+	else{
+		var distance_from_top = button.offset().top - $('body > header').eq(0).outerHeight();
+		panel.css('top', distance_from_top);
+		panel.fadeIn(255);
+		button.addClass('active');
+	}
+});
 
 // disable map stuff
 $('#map-legend a').click(function(e){

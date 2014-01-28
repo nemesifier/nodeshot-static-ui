@@ -316,6 +316,7 @@ article.center-stage{
 .loading{
     padding: 7px 14px;
     cursor: default;
+    display: none;
 }
 .loading .icon-loading{
     font-size: 17px;
@@ -631,4 +632,29 @@ article.center-stage{
 #preloader .icon-loading{
     position: relative;
     top: -1px
+}
+
+.side-panel{
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    right: -3px;
+    padding: 15px 18px 15px 15px;
+    min-width: 150px;
+    max-width: 353px;
+    min-height: 54px;
+    
+    /*top: 54px;*/
+    
+    background-color: #e4e4e4;
+    color: #363636;
+    border: 1px solid #c6c6c4;
+    border-right: 0 none;
+}
+
+#fn-search-address{
+    width: 300px;
+    padding-top: 11px;
+    padding-bottom: 0;
 }

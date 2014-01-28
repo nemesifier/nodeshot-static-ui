@@ -369,6 +369,13 @@ input.error, .error input{
     outline: 0 none
 }
 
+#map-toolbar a.active,
+#map-toolbar a.active:hover
+#map-toolbar a.active:focus{
+    border-top-color: #c6c6c4;
+    background-color: #e4e4e4;
+}
+
 .loading .icon-close{
     color: #fff;
     opacity: 0.4;
