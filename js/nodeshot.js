@@ -53,17 +53,30 @@ $('#map-toolbar a').click(function(e){
 	
 	var button = $(this),
 		panel_id = button.attr('data-panel'),
-		panel = $('#' + panel_id);
+		panel = $('#' + panel_id),
+		other_panels = $('.side-panel:not(#'+panel_id+')');
 	
-	if (panel.is(':visible')) {
-		panel.fadeOut(255);
-		button.removeClass('active');
+	// if no panel return here
+	if (!panel.length) {
+		return;
 	}
-	else{
+	
+	// hide all other open panels
+	other_panels.hide();
+	// hide any open tooltip
+	$('#map-toolbar .tooltip').hide();
+	$('#map-toolbar a').removeClass('active');
+	
+	if (panel.is(':hidden')) {
 		var distance_from_top = button.offset().top - $('body > header').eq(0).outerHeight();
 		panel.css('top', distance_from_top);
-		panel.fadeIn(255);
+		panel.show();
 		button.addClass('active');
+		button.tooltip('disable');
+	}
+	else{
+		panel.hide();
+		button.tooltip('enable');
 	}
 });
 
