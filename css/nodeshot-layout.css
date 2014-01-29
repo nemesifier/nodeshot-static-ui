@@ -633,9 +633,10 @@ article.center-stage{
     display: none;
     position: absolute;
     top: 0;
-    z-index: 99;
+    z-index: 1000; /* cover map */
+    overflow: hidden;
     right: 0px;
-    padding: 15px;
+    padding: 8px;
     min-width: 150px;
     max-width: 353px;
     min-height: 54px;
@@ -652,11 +653,18 @@ article.center-stage{
     padding: 0
 }
 
-.side-panel .tool.active,
-.side-panel .tool:active,
-.side-panel .tool.active:hover,
-.side-panel .tool.active:focus{
-    cursor: default;
+.panel-inner{
+    width: 230px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    background-color: #f1f1f1;
+    border: 1px solid #dadada;
+}
+
+.panel-inner .scroller-content{
+    padding: 13px 20px 5px !important;
 }
 
 #fn-map-tools{
@@ -673,6 +681,5 @@ article.center-stage{
 
 #fn-search-address{
     width: 300px;
-    padding-top: 11px;
-    padding-bottom: 0;
+    padding: 11px 15px 0
 }

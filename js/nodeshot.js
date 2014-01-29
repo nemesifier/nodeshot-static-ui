@@ -71,7 +71,16 @@ $('#map-toolbar a').click(function(e){
 	if (panel.is(':hidden')) {
 		var distance_from_top = button.offset().top - $('body > header').eq(0).outerHeight();
 		panel.css('top', distance_from_top);
+		
+		
+		// here we should use an event
+		if (panel.hasClass('adjust-height')) {
+			var preferences_height = $('#map-container').height() - distance_from_top -18;
+			panel.height(preferences_height);
+		}
+		
 		panel.show();
+		$('.scroller').scroller('reset');
 		button.addClass('active');
 		button.tooltip('disable');
 	}
@@ -90,6 +99,18 @@ $('#map-toolbar a.icon-tools').click(function(e){
 	}
 	else{
 		preferences_button.tooltip('enable');
+	}
+});
+
+// correction for map-filter
+$('#map-toolbar a.icon-layer-2').click(function(e){
+	var button = $(this),
+		other_buttons = $('a.icon-config, a.icon-3d, a.icon-tools', '#map-toolbar');
+	if(button.hasClass('active')) {
+		other_buttons.tooltip('disable');
+	}
+	else{
+		other_buttons.tooltip('enable');
 	}
 });
 
@@ -262,4 +283,12 @@ $(window).resize(function(e){
 	setMapDimensions();
     
     clearPreloader();
+});
+
+$(document).ready(function($){
+    // The axis option is for setting the dimension in
+    // which the scrollbar should operate.
+	$(".scroller").scroller({
+		trackMargin: 4
+	});
 });
