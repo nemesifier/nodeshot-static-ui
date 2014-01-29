@@ -48,6 +48,7 @@ $('#loading .icon-close').click(function(e){
 // init tooltip
 $('#map-toolbar a, .hastip').tooltip();
 
+// map toolbar buttons
 $('#map-toolbar a').click(function(e){
 	e.preventDefault();
 	
@@ -80,8 +81,20 @@ $('#map-toolbar a').click(function(e){
 	}
 });
 
+// correction for map tools
+$('#map-toolbar a.icon-tools').click(function(e){
+	var button = $(this),
+		preferences_button = $('#map-toolbar a.icon-config');
+	if(button.hasClass('active')) {
+		preferences_button.tooltip('disable');
+	}
+	else{
+		preferences_button.tooltip('enable');
+	}
+});
+
 // disable map stuff
-$('#map-legend a').click(function(e){
+$('#map-legend a:not(.icon-close)').click(function(e){
 	e.preventDefault();
 	
 	var li = $(this).parent();
@@ -99,14 +112,16 @@ $('#btn-legend, #map-legend .icon-close').click(function(e){
 	var legend = $('#map-legend'),
 		button = $('#btn-legend');
 	
-	legend.fadeToggle(250, function(){
-		if(legend.is(':visible')){
-			button.addClass('disabled');
-		}
-		else{
-			button.removeClass('disabled');
-		}
-	});
+	if(legend.is(':visible')){
+		legend.fadeOut(255);
+		button.removeClass('disabled');
+		button.tooltip('enable');
+	}
+	else{
+		legend.fadeIn(255);
+		button.addClass('disabled');
+		button.tooltip('disable').tooltip('hide');
+	}
 });
 
 // automatically center modal depending on its width
@@ -209,6 +224,26 @@ $('#map-toolbar .icon-pin-add').click(function(e){
         //dialog.css('top', $(window).height()/2.1 - dialog_dimensions.height);
         dialog.fadeIn(255);
     });
+});
+
+$('#fn-map-tools .tool').click(function(e){
+	e.preventDefault();
+	var button = $(this),
+		active_buttons = $('#fn-map-tools .tool.active');
+	
+	if(!button.hasClass('active')){
+		// deactivate any other
+		active_buttons.removeClass('active');
+		active_buttons.tooltip('enable');
+		
+		button.addClass('active');
+		button.tooltip('hide');
+		button.tooltip('disable');
+	}
+	else{
+		button.removeClass('active');
+		button.tooltip('enable');
+	}
 });
 
 // show map toolbar on mobile

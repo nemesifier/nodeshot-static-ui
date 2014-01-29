@@ -391,12 +391,6 @@ article.center-stage{
     width: auto;
 }
 
-#map-toolbar .disabled{
-    color: #3d3d3d !important;
-    cursor: default;
-    background-color: transparent !important;
-}
-
 .tooltip-inner{
     padding: 10px 12px !important;
     max-width: 250px !important;
@@ -408,7 +402,8 @@ article.center-stage{
     left: auto !important;
     right: 57px !important;
 }
-#map-toolbar .tooltip-inner{
+#map-toolbar .tooltip-inner,
+.side-panel .tooltip-inner{
     padding: 5px 12px !important;
     font-weight: bold;
     white-space: nowrap;
@@ -644,13 +639,36 @@ article.center-stage{
     min-width: 150px;
     max-width: 353px;
     min-height: 54px;
-    
-    /*top: 54px;*/
-    
-    background-color: #e4e4e4;
-    color: #363636;
-    border: 1px solid #c6c6c4;
-    border-right: 0 none;
+}
+
+.side-panel .tool{
+    font-size: 24px;
+    padding: 2px 9px;
+    border-radius: 3px;
+}
+
+.side-panel .tool:before{
+    margin: 0;
+    padding: 0
+}
+
+.side-panel .tool.active,
+.side-panel .tool:active,
+.side-panel .tool.active:hover,
+.side-panel .tool.active:focus{
+    cursor: default;
+}
+
+#fn-map-tools{
+    min-width: 100px;
+    min-height: 50px;
+    padding: 15px;
+}
+#fn-map-tools p{ margin: 0 }
+#fn-map-tools p:first-child{ margin: 0 0 8px }
+
+#fn-map-tools p button:first-child{
+    margin-right: 5px
 }
 
 #fn-search-address{

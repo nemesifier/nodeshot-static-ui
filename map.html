@@ -117,13 +117,13 @@
     
     <div id="map-container">
         <aside id="map-toolbar">
-            <a href="#" class="icon-pin-add" data-toggle="tooltip" title="Add new node" data-placement="left" data-delay="400"></a>
-            <a href="#" class="icon-search" data-panel="fn-search-address" data-toggle="tooltip" title="Search address" data-placement="left" data-delay="400"></a>
-            <a href="#" class="icon-layer-2" title="Filter layers" data-placement="left" data-delay="400"></a>
-            <a href="#" class="icon-3d smaller" title="Toggle 3D view" data-placement="left" data-delay="400"></a>
-            <a href="#" class="icon-tools" data-panel="fn-map-tools" title="Map tools" data-placement="left" data-delay="400"></a>
-            <a href="#" class="icon-config" data-panel="fn-map-preferences" title="Map preferences" data-placement="left" data-delay="400"></a>
-            <a id="btn-legend" href="#" class="icon-list disabled" title="Toggle legend" data-placement="left" data-delay="400"></a>
+            <a href="#" class="icon-pin-add" data-toggle="tooltip" title="Add new node" data-placement="left" data-delay="600"></a>
+            <a href="#" class="icon-search" data-panel="fn-search-address" data-toggle="tooltip" title="Search address" data-placement="left" data-delay="600"></a>
+            <a href="#" class="icon-layer-2" title="Filter layers" data-placement="left" data-delay="600"></a>
+            <a href="#" class="icon-3d smaller" title="Toggle 3D view" data-placement="left" data-delay="600"></a>
+            <a href="#" class="icon-tools" data-panel="fn-map-tools" title="Map tools" data-placement="left" data-delay="600"></a>
+            <a href="#" class="icon-config" data-panel="fn-map-preferences" title="Map preferences" data-placement="left" data-delay="600"></a>
+            <a id="btn-legend" href="#" class="icon-list disabled" title="Toggle legend" data-placement="left" data-delay="600"></a>
         </aside>
         
         <a id="toggle-toolbar" href="#" class="glyphicon glyphicon-chevron-up"></a>
@@ -146,8 +146,18 @@
             </div>
             
             <div id="fn-map-tools" class="side-panel">
-                test<br><br>
-                test
+                <p>
+                    <button href="#" class="icon-ruler tool hastip"
+                            data-toggle="tooltip" title="measure distance" data-placement="top" data-delay="600"></button>
+                    <button href="#" class="icon-select-area tool hastip"
+                            data-toggle="tooltip" title="measure area" data-placement="top" data-delay="600"></button>
+                </p>
+                <p>
+                    <button href="#" class="icon-elevation-profile tool hastip"
+                            data-toggle="tooltip" title="elevation profile" data-placement="bottom" data-delay="600"></button>
+                    <button href="#" class="icon-placeholder tool hastip"
+                            data-toggle="tooltip" title="drop placeholder" data-placement="bottom" data-delay="600"></button>
+                </p>
             </div>
             
             <div id="fn-map-preferences" class="side-panel">
@@ -305,6 +315,8 @@
     <script>
         $(window).load(function(e){
             var map = L.mapbox.map('map-js', 'examples.map-9ijuk24y').setView([42.12, 12.45], 9);
+            // tmp
+            $('#map-toolbar .icon-tools').trigger('click');
         });
     </script>
 </body>
