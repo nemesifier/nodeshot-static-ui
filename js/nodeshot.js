@@ -289,6 +289,6 @@ $(document).ready(function($){
     // The axis option is for setting the dimension in
     // which the scrollbar should operate.
 	$(".scroller").scroller({
-		trackMargin: 4
+		trackMargin: 6
 	});
 });

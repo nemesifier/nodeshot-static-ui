@@ -6,30 +6,39 @@
  * Copyright © 2013 Ben Plum <mr@benplum.com>
  * Released under the MIT License <http://www.opensource.org/licenses/mit-license.php>
  */
+
 .scroller { overflow: hidden; overflow-x: hidden; overflow-y: hidden; position: relative; }
-.scroller-content { height: 100%; overflow: auto; overflow-x: hidden; overflow-y: auto; position: relative; z-index: 1; }
+.scroller-content {
+	height: 100%;
+	overflow: auto;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: relative;
+	z-index: 1;
+}
 .scroller-bar {
-	background: transparent;
-	/*border-left: 1px solid #EEEEEE;*/
+	background: inherit;
 	display: none;
 	height: 100%;
 	position: absolute;
-	right: 4px;
+	right: 0;
 	top: 0;
-	width: 8px;
+	width: 15px;
 	z-index: 2;
 }
 .scroller-track {
+	background: inherit;
 	height: 100%;
-	width: 100%;
-	position: relative;
 	overflow: hidden;
-	background: #d6d6d6;
+	position: relative;
+	width: 9px;
+	background-color: #989898;
+	background-color: rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
 }
+
 .scroller-handle {
 	background: #989898;
-	border: 0 none;
 	border-radius: 5px;
 	cursor: pointer;
 	height: 20px;
@@ -37,8 +46,8 @@
 	position: absolute;
 	right: 0px;
 	top: 0;
-	width: 8px;
-	z-index: 2;
+	width: 9px;
+	z-index: 2; 
 	-webkit-transition: right 0.1s linear, width 0.1s linear;
 	-moz-transition: right 0.1s linear, width 0.1s linear;
 	-ms-transition: right 0.1s linear, width 0.1s linear;
