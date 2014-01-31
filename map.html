@@ -282,13 +282,18 @@
                 </p>
                 
                 <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
-                    <input class="form-control" type="password" name="password" placeholder="Password">
+                    <input class="form-control" type="password" name="password" placeholder="Password" id="js-signup-password">
                     <span class="input-group-addon icon-lock"></span>
                 </p>
                 
                 <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
                     <input class="form-control" type="password" name="password2" placeholder="Confirm password">
                     <span class="input-group-addon icon-lock"></span>
+                </p>
+                
+                <p class="input-group text" id="js-password-strength-message">
+                    <span class="pwstrength_viewport_progress"></span>
+                    <span class="pwstrength_viewport_verdict"></span>
                 </p>
                 
                 <button class="btn btn-default">Sign up</button>
@@ -364,11 +369,29 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/nodeshot.js"></script>
+    <script type="text/javascript" src="js/pwstrength.js"></script>
     <script>
         $(window).load(function(e){
             var map = L.mapbox.map('map-js', 'examples.map-9ijuk24y').setView([42.12, 12.45], 9);
             // tmp
-            $('#map-toolbar .icon-config').trigger('click');
+            //$('#map-toolbar .icon-config').trigger('click');
+            $('#js-signup-password').pwstrength({
+                common: {
+                    minChar: 1
+                },
+                ui: {
+                    container: "#js-password-strength-message",
+                    viewports: {
+                        progress: ".pwstrength_viewport_progress",
+                        verdict: ".pwstrength_viewport_verdict"
+                    },
+                    verdicts: ["Very weak", "Weak", "Normal", "Medium", "Strong"],
+                    scores: [10, 17, 26, 40, 50]
+                }
+                //bootstrap2: true
+            }).focus(function(e){
+                $('#js-password-strength-message').fadeIn(255);
+            });
         });
     </script>
 </body>

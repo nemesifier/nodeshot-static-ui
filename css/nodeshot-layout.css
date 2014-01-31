@@ -683,3 +683,13 @@ article.center-stage{
     width: 300px;
     padding: 11px 15px 0
 }
+
+#js-password-strength-message{
+    width: 100%;
+    display: none;
+}
+
+#js-password-strength-message .progress{
+    margin: 0 0 5px;
+    border: 1px solid #ccc;
+}
