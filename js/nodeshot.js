@@ -148,7 +148,12 @@ $('#btn-legend, #map-legend .icon-close').click(function(e){
 // automatically center modal depending on its width
 $('.modal.autocenter').on('show.bs.modal', function(e) {
     var dialog = $(this).find('.modal-dialog'),
-        dialog_dimensions = dialog.getHiddenDimensions();
+        dialog_dimensions = dialog.getHiddenDimensions(),
+        coefficient = $(this).attr('data-autocenter-coefficient');
+    
+    if(!coefficient){
+        coefficient = 2.1
+    }
     
     dialog.css({
         width: dialog_dimensions.width,
@@ -156,7 +161,7 @@ $('.modal.autocenter').on('show.bs.modal', function(e) {
     });
     
     // vertically align to center
-    new_height = ($(window).height() - dialog_dimensions.height) /2.1
+    new_height = ($(window).height() - dialog_dimensions.height) / coefficient;
     // ensure new position is greater than zero
     new_height = new_height > 0 ? new_height : 0;
     // set new height
@@ -291,4 +296,22 @@ $(document).ready(function($){
 	$(".scroller").scroller({
 		trackMargin: 6
 	});
+    
+    $('#js-signup-password').pwstrength({
+        common: {
+            minChar: 1
+        },
+        ui: {
+            container: "#js-password-strength-message",
+            viewports: {
+                progress: ".pwstrength_viewport_progress",
+                verdict: ".pwstrength_viewport_verdict"
+            },
+            verdicts: ["Very weak", "Weak", "Normal", "Medium", "Strong"],
+            scores: [10, 17, 26, 40, 50]
+        }
+        //bootstrap2: true
+    }).focus(function(e){
+        $('#js-password-strength-message').fadeIn(255);
+    });
 });

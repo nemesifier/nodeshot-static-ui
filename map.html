@@ -240,7 +240,8 @@
     </div>
     
     <!-- Sign up -->
-    <div class="modal fade narrow autocenter enlarge-on-mobile" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal fade narrow autocenter enlarge-on-mobile" id="signupModal"
+         tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true" data-autocenter-coefficient="2.6">
         <div class="modal-dialog modal-content modal-body inverse user-dialog">
             
             <p class="text">By signing up to this service you agree to our <a href="#">privacy policy</a></p>
@@ -374,24 +375,7 @@
         $(window).load(function(e){
             var map = L.mapbox.map('map-js', 'examples.map-9ijuk24y').setView([42.12, 12.45], 9);
             // tmp
-            //$('#map-toolbar .icon-config').trigger('click');
-            $('#js-signup-password').pwstrength({
-                common: {
-                    minChar: 1
-                },
-                ui: {
-                    container: "#js-password-strength-message",
-                    viewports: {
-                        progress: ".pwstrength_viewport_progress",
-                        verdict: ".pwstrength_viewport_verdict"
-                    },
-                    verdicts: ["Very weak", "Weak", "Normal", "Medium", "Strong"],
-                    scores: [10, 17, 26, 40, 50]
-                }
-                //bootstrap2: true
-            }).focus(function(e){
-                $('#js-password-strength-message').fadeIn(255);
-            });
+            $('#map-toolbar .icon-config').trigger('click');
         });
     </script>
 </body>
