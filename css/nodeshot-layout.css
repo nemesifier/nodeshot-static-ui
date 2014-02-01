@@ -152,6 +152,12 @@ article.center-stage{
     #top-bar .dropdown-menu{
         width: 100%;
     }
+    
+    article.narrow{
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 /* --- adjustments for medium sizes  --- */
