@@ -44,9 +44,17 @@
             <div id="general-search">
                 <input type="text" id="general-search-input" placeholder="Search for data">
                 <span class="icon-search">&nbsp;</span>
+                <span class="icon-spinner animate-spin"></span>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="icon-pin">Zioproto Gallia</a></li>
+                    <li><a href="#" class="icon-pin">Hotspot Gallicano</a></li>
+                    <li><a href="#" class="icon-pin">Pisa::Galluppi</a></li>
+                    <li><a href="#" class="icon-user">galluswifi</a></li>
+                    <li><a href="#" class="icon-user">Alberto gallo</a></li>
+                </ul>
             </div>
             
-            <ul>
+            <ul id="main-actions">
                 <li>
                     <a href="#" class="icon-search">&nbsp;</a>
                 </li>
@@ -283,7 +291,7 @@
             <div id="loading" class="overlay loading">
                 <span class="icon-loading animate-spin"></span>
                 <span class="text">Loading &hellip;</span>
-                <a class="icon-close" href="#"></a>
+                <a class="icon-close" href="#" title="cancel operation"></a>
             </div>
             
             <div id="step1" tabindex="-1" role="dialog" aria-labelledby="step1Label" aria-hidden="true"
@@ -441,8 +449,6 @@
     <script>
         $(window).load(function(e){
             var map = L.mapbox.map('map-js', 'examples.map-9ijuk24y').setView([42.12, 12.45], 9);
-            // tmp
-            $('#map-toolbar .icon-config').trigger('click');
         });
     </script>
 </body>

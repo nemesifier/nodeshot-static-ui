@@ -713,6 +713,7 @@ input[type="range"]::-webkit-slider-thumb:active {
 
 .btn-group.dropdown ul.dropdown-menu{
     width: 100%;
+    margin-top: -1px;
 }
 
 .btn-group.dropdown ul.dropdown-menu a{

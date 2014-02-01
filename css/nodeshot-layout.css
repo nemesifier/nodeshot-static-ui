@@ -80,35 +80,56 @@
     color: #424141;
 }
 
-#top-bar ul{
+#general-search .dropdown-menu{
+    margin-top: -1px;
+    font-size: 14px;
+    border-right: 0 none;
+    border-left: 0 none;
+}
+
+#top-bar #general-search a{
+    padding: 8px 13px;
+    color: #4d4d4d;
+}
+
+#general-search a:hover{
+    background-color: #0a246a;
+    color: #fff !important;
+}
+
+#general-search a:before{
+    margin-right: 9px;
+}
+
+#main-actions{
     float: right;
     margin: 0;
     padding: 0;
     list-style: none outside;
 }
 
-#top-bar ul li,
-#top-bar ul li a{
+#main-actions li,
+#main-actions li a{
     float: left;
     margin: 0;
 }
-#top-bar ul li li,
-#top-bar ul li li a{ float: none }
+#main-actions li li,
+#main-actions li li a{ float: none }
 
-#top-bar ul li a{
+#main-actions li a{
     display: block;
     position: relative;
 }
 
-#top-bar .icon-user,
-#top-bar .icon-user-add,
-#top-bar .icon-menu,
-#top-bar .dropdown-menu span{ font-size: 22px }
-#top-bar .dropdown-menu span{ position: relative; bottom: -2px }
-#top-bar .dropdown .text,
-#top-bar .caret{ position: relative; top: -2px }
-#top-bar ul .icon-search,
-#top-bar ul .icon-menu{ display: none }
+#main-actions .icon-user,
+#main-actions .icon-user-add,
+#main-actions .icon-menu,
+#main-actions .dropdown-menu span{ font-size: 22px }
+#main-actions .dropdown-menu span{ position: relative; bottom: -2px }
+#main-actions .dropdown .text,
+#main-actions .caret{ position: relative; top: -2px }
+#main-actions .icon-search,
+#main-actions .icon-menu{ display: none }
 
 #top-bar .notifications{ width: 89px }
 #top-bar .notifications .bg{
@@ -180,7 +201,7 @@ article.center-stage{
     }
     #general-search-input{ padding: 0px 15px; }
     
-    #top-bar ul li a{
+    #main-actions li a{
         height: 70px;
         padding: 18px 25px;
     }
@@ -274,7 +295,7 @@ article.center-stage{
     }
     #general-search-input{ padding: 0px 15px }
     
-    #top-bar ul li a{
+    #main-actions li a{
         height: 50px;
         width: 61px;
         padding: 8px 15px;
@@ -298,8 +319,8 @@ article.center-stage{
         font-size: 13px;
     }
     
-    #top-bar ul .icon-search{ display: block; font-size: 25px }
-    #top-bar ul .icon-menu{ display: block }
+    #main-actions .icon-search{ display: block; font-size: 25px }
+    #main-actions .icon-menu{ display: block }
     
     #top-bar .icon-search:before,
     #top-bar .icon-globe:before{ margin: 0 !important }

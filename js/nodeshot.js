@@ -282,13 +282,16 @@ $('#toggle-toolbar').click(function(e){
 // search (ugly global var!)
 var searchLoadingIndicator = $('#general-search .animate-spin'),
     searchIcon = $('#general-search .icon-search'),
+    searchResults = $('#general-search ul'),
     showSearchSpinner = function(){
         searchIcon.hide();
         searchLoadingIndicator.fadeIn(255);
+        searchResults.fadeIn(255);
     },
     hideSearchSpinner = function(){
         searchLoadingIndicator.hide();
         searchIcon.fadeIn(255);
+        searchResults.fadeOut(255);
     };
 
 $('#general-search-input').keyup(function(e){
