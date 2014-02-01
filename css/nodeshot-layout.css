@@ -52,12 +52,32 @@
     background-color: transparent;
 }
 
-#general-search .icon-search{
+#general-search span{
 	position: absolute;
-	right: -7px;
-	bottom: -1px;
+	right: 8px;
+	bottom: 4px;
+    width: 22px;
+    height: 22px;
+    overflow: hidden;
 	color: #8f8f8f;
 	font-size: 22px;
+    line-height: 0px !important;
+}
+#general-search span:before{
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+#general-search .animate-spin{
+    display: none;
+    -webkit-transform-origin: 54% 51%;
+    transform-origin: 54% 51%;
+    -ms-transform-origin: 54% 51%; /* IE 9 */
+    -webkit-animation: spin 1.7s infinite linear;
+    -moz-animation: spin 1.7s infinite linear;
+    -o-animation: spin 1.7s infinite linear;
+    animation: spin 1.7s infinite linear;
+    color: #424141;
 }
 
 #top-bar ul{

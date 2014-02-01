@@ -279,6 +279,29 @@ $('#toggle-toolbar').click(function(e){
     setMapDimensions();
 });
 
+// search (ugly global var!)
+var searchLoadingIndicator = $('#general-search .animate-spin'),
+    searchIcon = $('#general-search .icon-search'),
+    showSearchSpinner = function(){
+        searchIcon.hide();
+        searchLoadingIndicator.fadeIn(255);
+    },
+    hideSearchSpinner = function(){
+        searchLoadingIndicator.hide();
+        searchIcon.fadeIn(255);
+    };
+
+$('#general-search-input').keyup(function(e){
+    if(this.value.length > 2 && searchLoadingIndicator.is(':hidden')){
+        showSearchSpinner();
+    }
+    else if(this.value.length < 3 && searchLoadingIndicator.is(':visible')){
+        hideSearchSpinner();
+    }
+}).blur(function(e){
+    hideSearchSpinner();
+});
+
 // map
 $(window).resize(function(e){
 	setCollapsibleMainMenuMaxHeight();
