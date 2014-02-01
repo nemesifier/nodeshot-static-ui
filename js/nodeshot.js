@@ -314,4 +314,7 @@ $(document).ready(function($){
     }).focus(function(e){
         $('#js-password-strength-message').fadeIn(255);
     });
+    
+    // activate switch
+    $('input.switch').bootstrapSwitch().bootstrapSwitch('setSizeClass', 'switch-small');
 });

@@ -647,7 +647,7 @@ article.center-stage{
     right: 0px;
     padding: 8px;
     min-width: 150px;
-    max-width: 353px;
+    max-width: 420px;
     min-height: 54px;
 }
 
@@ -663,7 +663,7 @@ article.center-stage{
 }
 
 .panel-inner{
-    width: 230px;
+    width: 270px;
     height: 100%;
     position: relative;
     overflow: hidden;
@@ -676,10 +676,43 @@ article.center-stage{
     padding: 13px 20px 5px !important;
 }
 
+.side-panel h1,
+.side-panel h2,
+.side-panel h3{
+    margin: 0 0 13px;
+    font: bold 14px "Arial", sans-serif;
+    font-variant: small-caps;
+    text-transform: uppercase;
+}
+
+.side-panel{
+    font: normal 14px "Helvetica", "Arial", sans-serif;
+}
+
+.side-panel label.inline{
+    position: relative;
+    bottom: -4px;
+}
+.side-panel .has-switch{
+    float: right
+}
+
+.side-panel p{
+    overflow: hidden;
+    clear: both;
+}
+
+.side-panel p,
+.side-panel .line,
+.side-panel .btn-group{
+    margin-bottom: 13px !important;
+}
+
 #fn-map-tools{
     min-width: 100px;
     min-height: 50px;
     padding: 15px;
+    overflow: visible;  /*do not hide tooltips*/
 }
 #fn-map-tools p{ margin: 0 }
 #fn-map-tools p:first-child{ margin: 0 0 8px }
