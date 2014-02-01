@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Nodeshot colors
  * keep here all instructions related to colors,
  * background colors, borders, ecc
@@ -44,18 +44,18 @@ body > header{
     color: #fff;
 }
 
-#general-search::-webkit-input-placeholder {
+#general-search-input::-webkit-input-placeholder {
     color: #979696;
 }
-#general-search:-moz-placeholder {
+#general-search-input:-moz-placeholder {
     /* FF 4-18 */
     color: #979696;
 }
-#general-search::-moz-placeholder {
+#general-search-input::-moz-placeholder {
     /* FF 19+ */
     color: #979696;
 }    
-#general-search:-ms-input-placeholder {
+#general-search-input:-ms-input-placeholder {
     /* IE 10+ */
     color: #979696;
 }

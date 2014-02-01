@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Nodeshot layout
  * Keep here all instructions to style the layout
  */
@@ -34,9 +34,30 @@
 }
 
 #general-search{
+	position: relative;
+	display: inline-block;
     line-height: 30px;
     border-radius: 4px;
     border: 0 none;
+    background-color: #fff;
+}
+
+#general-search-input{
+    border: 0 none;
+    float: left;
+    height: 100%;
+    width: 100%;
+    line-height: 30px;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+#general-search .icon-search{
+	position: absolute;
+	right: -7px;
+	bottom: -1px;
+	color: #8f8f8f;
+	font-size: 22px;
 }
 
 #top-bar ul{
@@ -66,8 +87,8 @@
 #top-bar .dropdown-menu span{ position: relative; bottom: -2px }
 #top-bar .dropdown .text,
 #top-bar .caret{ position: relative; top: -2px }
-#top-bar .icon-search,
-#top-bar .icon-menu{ display: none }
+#top-bar ul .icon-search,
+#top-bar ul .icon-menu{ display: none }
 
 #top-bar .notifications{ width: 89px }
 #top-bar .notifications .bg{
@@ -136,8 +157,8 @@ article.center-stage{
         width: 278px;
         height: 30px;
         margin: 19px 3.5% 0 0;
-        padding: 0px 15px;
     }
+    #general-search-input{ padding: 0px 15px; }
     
     #top-bar ul li a{
         height: 70px;
@@ -230,8 +251,8 @@ article.center-stage{
         position: absolute;
         top:0; left: 25%;
         margin: 10px 1.5% 0 0;
-        padding: 0px 15px;
     }
+    #general-search-input{ padding: 0px 15px }
     
     #top-bar ul li a{
         height: 50px;
@@ -257,8 +278,8 @@ article.center-stage{
         font-size: 13px;
     }
     
-    #top-bar .icon-search{ display: block; font-size: 25px }
-    #top-bar .icon-menu{ display: block }
+    #top-bar ul .icon-search{ display: block; font-size: 25px }
+    #top-bar ul .icon-menu{ display: block }
     
     #top-bar .icon-search:before,
     #top-bar .icon-globe:before{ margin: 0 !important }

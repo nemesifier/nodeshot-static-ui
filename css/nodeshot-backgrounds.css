@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Nodeshot backgrounds
  * background-images
  */
@@ -7,6 +7,8 @@
     background: transparent url(../images/nodeshot-logo.svg) no-repeat scroll 0 50%
 }
 
+/*
 #general-search{
     background: #fff url(../images/search-icon.png) no-repeat scroll 97% 50%;
 }
+*/
