@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.switch.css" rel="stylesheet">
     <!--<link href="css/bootstrap-theme.min.css" rel="stylesheet">-->
     <link href="css/nodeshot-layout.css" rel="stylesheet">
     <link href="css/nodeshot-colors.css" rel="stylesheet">
@@ -346,11 +347,15 @@
                     <span class="input-group-addon icon-lock"></span>
                 </p>
                 
-                <p class="checkbox text text-left">
-                    <label class="hastip" data-placement="top" title="For your protection, keep this checked only on devices you use regularly">
-                        <input type="checkbox" name="remember">
-                        Stay signed in
-                    </label>
+                <p class="text text-left">
+                    <span class="custom-checkbox hastip"
+                          data-placement="top"
+                          title="For your protection, keep this checked only on devices you use regularly">
+                        <input type="checkbox" id="remember-signup" name="remember" />
+                        <label for="remember-signup"></label>
+                    </span>
+                    
+                    <label for="remember-signup">Stay signed in</label>
                 </p>
                 
                 <p><button class="btn btn-default">Sign in</button></p>
@@ -369,6 +374,7 @@
     <script src="js/scroller/scroller.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.switch.js"></script>
     <script src="js/nodeshot.js"></script>
     <script type="text/javascript" src="js/pwstrength.js"></script>
     <script>
