@@ -30,6 +30,7 @@
     text-indent: -300px;
     min-width: 170px;
     background-size: 155px !important;
+    overflow: hidden;
 }
 
 #general-search{
@@ -700,4 +701,10 @@ article.center-stage{
 #js-password-strength-message .progress{
     margin: 0 0 5px;
     border: 1px solid #ccc;
+}
+
+.doublemargin > p,
+.doublemargin > div,
+.doublemargin .btn-group.dropdown{
+    margin-bottom: 20px
 }

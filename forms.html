@@ -121,92 +121,96 @@
     <article class="center-stage narrow">
         <h1>Nodeshot Forms</h1>
         
-        <p>
-            <label for="input-test">Label</label>
-            <span class="input-group">
-                <input type="text" class="form-control input-sm" placeholder="input text with icon" id="input-test">
-                <span class="input-group-addon icon-layer"></span>
-            </span>
-        </p>
-        
-        <p>
-            <label for="textarea-test">Textarea</label>
-            <textarea class="form-control input-sm" rows="6" id="textarea-test"></textarea>
-        </p>
-        
-        <p>
-            <label for="input-test2">Label</label>
-            <input type="text" class="form-control input-sm" placeholder="input text without icon" id="input-test2">
-        </p>
-        
-        <p>
-            <label for="switch1">Checkbox switch &nbsp;&nbsp;</label>
-            <input type="checkbox" checked class="switch" id="switch1">
-        </p>
-        
-        <p>
-            <label for="switch2">Checkbox switch &nbsp;&nbsp;</label>
-            <input type="checkbox" class="switch" id="switch2">
-        </p>
-        
-        <p>
-            <span class="slider">
-                <input type = "range" min="0" max="100" onchange="rangevalue.value=value"/>
-                <output id="rangevalue">50</output>
-            </span>
-        </p>
-        
-        <p>
-            <span class="custom-checkbox">
-                <input type="checkbox" id="my-checkbox" name="check" />
-                <label for="my-checkbox"></label>
-            </span>
+        <form action="" class="doublemargin">
+            <p>
+                <label for="input-test">Label</label>
+                <span class="input-group">
+                    <input type="text" class="form-control input-sm" placeholder="input text with icon" id="input-test">
+                    <span class="input-group-addon icon-layer"></span>
+                </span>
+            </p>
             
-            <label for="my-checkbox">Checkbox</label>
-        </p>
-        
-        <p>
-            <span class="custom-radio">
-                <input type="radio" id="my-radio1" name="check" checked name="radio" />
-                <label for="my-radio1"></label>
-            </span>
-            <label for="my-radio1">Radio button 1</label>
+            <p>
+                <label for="textarea-test">Textarea</label>
+                <textarea class="form-control input-sm" rows="6" id="textarea-test"></textarea>
+            </p>
             
-            &nbsp;
+            <p>
+                <label for="input-test2">Label</label>
+                <input type="text" class="form-control input-sm" placeholder="input text without icon" id="input-test2">
+            </p>
             
-            <span class="custom-radio">
-                <input type="radio" id="my-radio2" name="check" name="radio" />
-                <label for="my-radio2"></label>
-            </span>
-            <label for="my-radio2">Radio button</label>
-        </p>
-        
-        <div class="btn-group dropdown">
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                Dropdown
-                <span class="caret">&#x25BC;</span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Dropdown link</a></li>
-                <li><a href="#">Dropdown link</a></li>
-            </ul>
-        </div>
-        
-        <br><br>
-        
-        <p>
-            <button type="button" class="btn btn-default">Default</button>
-            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-            <button type="button" class="btn btn-primary">Primary</button>
-            <!-- Indicates a successful or positive action -->
-            <button type="button" class="btn btn-success">Success</button>
-            <!-- Contextual button for informational alert messages -->
-            <button type="button" class="btn btn-info">Info</button>
-            <!-- Indicates caution should be taken with this action -->
-            <button type="button" class="btn btn-warning">Warning</button>
-            <!-- Indicates a dangerous or potentially negative action -->
-            <button type="button" class="btn btn-danger">Danger</button>
-        </p>
+            <div class="line"></div>
+            
+            <p>
+                <label for="switch1" class="inline">Checkbox switch &nbsp;&nbsp;</label>
+                <input type="checkbox" checked class="switch" id="switch1">
+            </p>
+            
+            <p>
+                <label for="switch2" class="inline">Checkbox switch &nbsp;&nbsp;</label>
+                <input type="checkbox" class="switch" id="switch2">
+            </p>
+            
+            <p>
+                <span class="slider">
+                    <input type = "range" min="0" max="100" onchange="rangevalue.value=value"/>
+                    <output id="rangevalue">50</output>
+                </span>
+            </p>
+            
+            <p>
+                <span class="custom-checkbox">
+                    <input type="checkbox" id="my-checkbox" name="check" />
+                    <label for="my-checkbox"></label>
+                </span>
+                
+                <label for="my-checkbox" class="inline">Checkbox</label>
+            </p>
+            
+            <p>
+                <span class="custom-radio">
+                    <input type="radio" id="my-radio1" name="check" checked name="radio" />
+                    <label for="my-radio1"></label>
+                </span>
+                <label for="my-radio1" class="inline">Radio button 1</label>
+                
+                &nbsp;
+                
+                <span class="custom-radio">
+                    <input type="radio" id="my-radio2" name="check" name="radio" />
+                    <label for="my-radio2"></label>
+                </span>
+                <label for="my-radio2" class="inline">Radio button</label>
+            </p>
+            
+            <div class="btn-group dropdown">
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                    Dropdown
+                    <span class="caret">
+                        <span class="icon-down"></span>
+                    </span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Dropdown link</a></li>
+                    <li><a href="#">Dropdown link</a></li>
+                </ul>
+            </div>
+            
+            <p>
+                <button type="button" class="btn btn-default">Default</button>
+                <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                <button type="button" class="btn btn-primary">Primary</button>
+                <!-- Indicates a successful or positive action -->
+                <button type="button" class="btn btn-success">Success</button>
+                <!-- Contextual button for informational alert messages -->
+                <button type="button" class="btn btn-info">Info</button>
+                <!-- Indicates caution should be taken with this action -->
+                <button type="button" class="btn btn-warning">Warning</button>
+                <!-- Indicates a dangerous or potentially negative action -->
+                <button type="button" class="btn btn-danger">Danger</button>
+            </p>
+        </form>
         
         <div id="loading" class="overlay loading">
             <span class="icon-loading animate-spin"></span>
