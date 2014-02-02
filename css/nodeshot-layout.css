@@ -11,6 +11,7 @@
     height: 70px;
     /* align search box to right */
     text-align: right;
+    position: relative;
 }
 /* align all the other things to left */
 #top-bar li, #top-bar a{ text-align: left }
@@ -180,6 +181,52 @@
 }
 
 #toggle-toolbar{ display: none !important }
+
+#notifications{
+    position: absolute;
+    z-index: 1004;
+    top: 70px;
+    right: 100px;
+    width: 415px;
+    min-height: 200px;
+    max-height: 400px;
+    background-color: #f3f5f9;
+    border: 1px solid #d9dada;
+    border-top: 1px solid #bbbbbb;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    font-size: 12px;
+    color: #32363a;
+}
+
+#notifications a{
+    color: #32363a !important;
+    text-decoration: underline
+}
+
+#notifications a:hover{
+    text-decoration: none;
+}
+
+#notifications .header{
+    padding: 12px 19px;
+    overflow: hidden;
+}
+
+#notifications .header span{ margin: 0 5px }
+
+#notifications .left{
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+
+#notifications .right{
+    width: 50%;
+    float: right;
+    text-align: right
+}
+
 
 /* --- Content --- */
 
@@ -715,7 +762,7 @@ article.center-stage{
 
 .side-panel .tool{
     font-size: 24px;
-    padding: 2px 9px;
+    padding: 4px 9px 5px;
     border-radius: 3px;
 }
 
@@ -764,11 +811,9 @@ article.center-stage{
     clear: both;
 }
 
-.side-panel p,
+.side-panel p{ margin-bottom: 13px }
 .side-panel .line,
-.side-panel .btn-group{
-    margin-bottom: 13px !important;
-}
+.side-panel .btn-group{ margin-bottom: 13px !important }
 
 #fn-map-tools{
     min-width: 100px;
