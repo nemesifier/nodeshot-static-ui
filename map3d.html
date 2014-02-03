@@ -461,6 +461,10 @@
     <script>
         $(window).load(function(e){
             var cesiumWidget = new Cesium.CesiumWidget('map-js');
+            var terrainProvider = new Cesium.CesiumTerrainProvider({
+                url : 'http://cesiumjs.org/smallterrain'
+            });
+            cesiumWidget.centralBody.terrainProvider = terrainProvider;
         });
     </script>
 </body>
