@@ -15,6 +15,7 @@
     <link href="css/nodeshot-typography.css" rel="stylesheet">
     <link rel="stylesheet" href="css/nodeshot.css">
     <link rel="stylesheet" href="css/animation.css">
+        <link href="js/scroller/scroller.css" rel="stylesheet">
     <!--[if IE 7]>
     <link rel="stylesheet" href="css/nodeshot-ie7.css">
     <![endif]-->
@@ -81,6 +82,52 @@
                        data-target="#ns-top-nav-links">&nbsp;</a>
                 </li>
             </ul>
+            <div id="notifications">
+                <span class="arrow"></span>
+                <div class="header">
+                    <div class="left">
+                        Notifications
+                    </div>
+                    <div class="right">
+                        <a href="#">See all</a> <span>-</span>
+                        <a href="#">Settings</a>
+                    </div>
+                </div>
+                <div class="scroller">
+                    <ul>
+                        <li class="unread">
+                            <span class="icon-pin"></span>
+                            <p class="message"><strong>ZioProto</strong> commented on your node <strong>Pomezia</strong>: "daje!"</p>
+                            <p class="time">12 hours ago</p>
+                        </li>
+                        <li class="unread">
+                            <span class="icon-pin"></span>
+                            <p class="message">The status of your node <strong>Pomezia</strong> has changed from <strong>"proposed"</strong> to <strong>"approved"</strong></p>
+                            <p class="time">yesterday</p>
+                        </li>
+                        <li class="unread">
+                            <span class="icon-user"></span>
+                            <p class="message"><strong>Some event</strong> has just happened</p>
+                            <p class="time">Jan 24th 2014</p>
+                        </li>
+                        <li class="read">
+                            <span class="icon-mail"></span>
+                            <p class="message">Some <strong> other event</strong> has just happened</p>
+                            <p class="time">Jan 24th 2014</p>
+                        </li>
+                        <li class="read">
+                            <span class="icon-pin"></span>
+                            <p class="message"><strong>ZioProto</strong> commented on your node <strong>Pomezia</strong>: "daje!"</p>
+                            <p class="time">12 hours ago</p>
+                        </li>
+                        <li class="read">
+                            <span class="icon-pin"></span>
+                            <p class="message"><strong>ZioProto</strong> commented on your node <strong>Pomezia</strong>: "daje!"</p>
+                            <p class="time">12 hours ago</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
         <nav id="nav-bar" class="navbar navbar-inverse" role="navigation">
             <div class="collapse navbar-collapse" id="ns-top-nav-links">
@@ -174,8 +221,11 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/scroller/scroller.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.switch.js"></script>
+    <script src="js/pwstrength.js"></script>
     <script src="js/nodeshot.js"></script>
 </body>
 </html>

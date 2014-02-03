@@ -36,6 +36,15 @@ var setMapDimensions = function(){
 	$('#map').width(width);
 }
 
+var setNotificationsLeft = function(){
+	//var 
+	var left = $('#top-bar .notifications').offset().left,
+		button_width = $('#top-bar .notifications').outerWidth();
+		notifications_width = $('#notifications').getHiddenDimensions().width;
+	//left
+	$('#notifications').css('left', left - notifications_width/2 + button_width/2);
+}
+
 var toggleLoading = function(){
 	$('#loading').fadeToggle(255);
 }
@@ -171,8 +180,13 @@ $('.modal.autocenter').on('show.bs.modal', function(e) {
 // get width of an hidden element
 $.fn.getHiddenDimensions = function(){
     var self = $(this);
-    if(self.is(':visible')){
-        throw('element is not hidden')
+    
+	// return immediately if element is visible
+	if(self.is(':visible')){
+        return {
+			width: self.outerWidth(),
+			height: self.outerHeight()
+		}
     }
     
     var hidden = self,  // this element is hidden
@@ -309,10 +323,10 @@ $('#general-search-input').keyup(function(e){
 $(window).resize(function(e){
 	setCollapsibleMainMenuMaxHeight();
 	setMapDimensions();
+	setNotificationsLeft();
 }).load(function(e){
 	setCollapsibleMainMenuMaxHeight();
 	setMapDimensions();
-    
     clearPreloader();
 });
 
@@ -342,5 +356,37 @@ $(document).ready(function($){
     });
     
     // activate switch
-    $('input.switch').bootstrapSwitch().bootstrapSwitch('setSizeClass', 'switch-small');
+    $('input.switch').bootstrapSwitch();
+	$('input.switch').bootstrapSwitch('setSizeClass', 'switch-small');
+});
+
+$('#main-actions .notifications').click(function(e){
+	e.preventDefault();
+	
+	var notifications = $('#notifications');
+	
+	if (notifications.is(':hidden')) {
+		setNotificationsLeft();
+		
+		notifications.fadeIn(255, function(){
+			$('#notifications .scroller').scroller('reset');
+			
+			$('html').one('click',function() {
+				notifications.fadeOut(150);
+			});
+		});
+	}
+	else{
+		notifications.fadeOut(150);
+	}
+});
+
+$('#notifications').click(function(e){
+	e.stopPropagation();
+});
+
+$('#notifications .scroller').mouseenter(function(e){
+	$('.scroller-bar').fadeIn(255);
+}).mouseleave(function(e){
+	$('.scroller-bar').fadeOut(255);
 });
