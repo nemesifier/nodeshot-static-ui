@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.switch.css" rel="stylesheet">
     <!--<link href="css/bootstrap-theme.min.css" rel="stylesheet">-->
     <link href="css/nodeshot-layout.css" rel="stylesheet">
     <link href="css/nodeshot-colors.css" rel="stylesheet">
@@ -13,9 +14,9 @@
     <link href="css/nodeshot-typography.css" rel="stylesheet">
     <link href="css/nodeshot-backgrounds.css" rel="stylesheet">
     <link href="css/nodeshot-typography.css" rel="stylesheet">
+    <link href="js/scroller/scroller.css" rel="stylesheet">
     <link rel="stylesheet" href="css/nodeshot.css">
     <link rel="stylesheet" href="css/animation.css">
-    <link rel="stylesheet" href="js/cesium/Widgets/widgets.css">
     <!--[if IE 7]>
     <link rel="stylesheet" href="css/nodeshot-ie7.css">
     <![endif]-->
@@ -26,6 +27,8 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    
+    <link rel="stylesheet" href="js/cesium/Widgets/widgets.css">
     <script src="js/cesium/Cesium.js"></script>
 </head>
 <body style="overflow:hidden">
@@ -38,9 +41,20 @@
         <nav id="top-bar">
             <h1><a href="#">Nodeshot</a></h1>
             
-            <input type="text" id="general-search" placeholder="Search for data">
+            <div id="general-search">
+                <input type="text" id="general-search-input" placeholder="Search for data">
+                <span class="icon-search">&nbsp;</span>
+                <span class="icon-spinner animate-spin"></span>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="icon-pin">Zioproto Gallia</a></li>
+                    <li><a href="#" class="icon-pin">Hotspot Gallicano</a></li>
+                    <li><a href="#" class="icon-pin">Pisa::Galluppi</a></li>
+                    <li><a href="#" class="icon-user">galluswifi</a></li>
+                    <li><a href="#" class="icon-user">Alberto gallo</a></li>
+                </ul>
+            </div>
             
-            <ul>
+            <ul id="main-actions">
                 <li>
                     <a href="#" class="icon-search">&nbsp;</a>
                 </li>
@@ -116,13 +130,13 @@
     
     <div id="map-container">
         <aside id="map-toolbar">
-            <a href="#" class="icon-pin-add" data-toggle="tooltip" title="Add new node" data-placement="left" data-delay="300"></a>
-            <a href="#" class="icon-search" data-toggle="tooltip" title="Search address" data-placement="left" data-delay="300"></a>
-            <a href="#" class="icon-layer-2" title="Filter layers" data-placement="left" data-delay="300"></a>
-            <a href="#" class="icon-3d smaller" title="Toggle 3D view" data-placement="left" data-delay="300"></a>
-            <a href="#" class="icon-tools" title="Map tools" data-placement="left" data-delay="300"></a>
-            <a href="#" class="icon-config" title="Map preferences" data-placement="left" data-delay="300"></a>
-            <a id="btn-legend" href="#" class="icon-list disabled" title="Toggle legend" data-placement="left" data-delay="300"></a>
+            <a href="#" class="icon-pin-add" data-toggle="tooltip" title="Add new node" data-placement="left" data-delay="600"></a>
+            <a href="#" class="icon-search" data-panel="fn-search-address" data-toggle="tooltip" title="Search address" data-placement="left" data-delay="600"></a>
+            <a href="#" class="icon-layer-2" data-panel="fn-map-filter" title="Filter layers" data-placement="left" data-delay="600"></a>
+            <a href="#" class="icon-3d smaller" title="Toggle 3D view" data-placement="left" data-delay="600"></a>
+            <a href="#" class="icon-tools" data-panel="fn-map-tools" title="Map tools" data-placement="left" data-delay="600"></a>
+            <a href="#" class="icon-config" data-panel="fn-map-preferences" title="Map preferences" data-placement="left" data-delay="600"></a>
+            <a id="btn-legend" href="#" class="icon-list disabled" title="Toggle legend" data-placement="left" data-delay="600"></a>
         </aside>
         
         <a id="toggle-toolbar" href="#" class="glyphicon glyphicon-chevron-up"></a>
@@ -138,6 +152,158 @@
                     <li><a href="#"><span class="circle" style="background:#138900"></span>active</a><span class="stats">(239)</span></li>
                 </ul>
                 <a class="icon-close" href="#"></a>
+            </div>
+            
+            <div id="fn-search-address" class="side-panel">
+                <div class="input-group">
+                    <input type="text" class="form-control input-sm" placeholder="Enter an address">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-sm" type="button">search</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div>
+            
+            <div id="fn-map-filter" class="side-panel adjust-height">
+                <div class="panel-inner scroller">
+                    <h2>map filter</h2>
+                    <p>test 1</p>
+                    <p>test 2</p>
+                    <p>test 3</p>
+                    <p>test 4</p>
+                    <p>test 5</p>
+                    <p>test 6</p>
+                    <p>test 7</p>
+                    <p>test 8</p>
+                    <p>test 9</p>
+                    <p>test 10</p>
+                    <p>test 11</p>
+                    <p>test 12</p>
+                    <p>test 13</p>
+                    <p>test 15</p>
+                    <p>test 16</p>
+                    <p>test 17</p>
+                    <p>test 18</p>
+                    <p>test 19</p>
+                    <p>test 20</p>
+                    <p>test 21</p>
+                </div>
+            </div>
+            
+            <div id="fn-map-tools" class="side-panel">
+                <p>
+                    <button href="#" class="icon-ruler tool hastip"
+                            data-toggle="tooltip" title="measure distance" data-placement="top" data-delay="600"></button>
+                    <button href="#" class="icon-select-area tool hastip"
+                            data-toggle="tooltip" title="measure area" data-placement="top" data-delay="600"></button>
+                </p>
+                <p>
+                    <button href="#" class="icon-elevation-profile tool hastip"
+                            data-toggle="tooltip" title="elevation profile" data-placement="bottom" data-delay="600"></button>
+                    <button href="#" class="icon-placeholder tool hastip"
+                            data-toggle="tooltip" title="drop placeholder" data-placement="bottom" data-delay="600"></button>
+                </p>
+            </div>
+            
+            <div id="fn-map-preferences" class="side-panel adjust-height">
+                <div class="panel-inner scroller">
+                    <h2>map preferences</h2>
+                    
+                    <p>
+                        <label for="switch1" class="inline">Cool setting 1</label>
+                        <input type="checkbox" checked class="switch" id="switch1">
+                    </p>
+                    
+                    <p>
+                        <label for="switch2" class="inline">Cool setting 2</label>
+                        <input type="checkbox" checked class="switch" id="switch2">
+                    </p>
+                    
+                    <p>
+                        <label for="switch3" class="inline">Advanced thing</label>
+                        <input type="checkbox" class="switch" id="switch3">
+                    </p>
+                    
+                    <div class="line"></div>
+                    
+                    <p>Setting chooser</p>
+                    
+                    <div class="btn-group dropdown">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                            Dropdown
+                            <span class="caret">
+                                <span class="icon-down"></span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Dropdown link</a></li>
+                            <li><a href="#">Dropdown link</a></li>
+                        </ul>
+                    </div>
+                    
+                    <p>Slider</p>
+                    
+                    <p>
+                        <span class="slider">
+                            <input type = "range" min="0" max="100" onchange="rangevalue.value=value"/>
+                            <output id="rangevalue">50</output>
+                        </span>
+                    </p>
+                    
+                    <div class="line"></div>
+                    
+                    <p>
+                        <label for="switch4" class="inline">Moaar stuff</label>
+                        <input type="checkbox" checked class="switch" id="switch4">
+                    </p>
+                    
+                    <p>
+                        <label for="switch5" class="inline">Too advanced</label>
+                        <input type="checkbox"  class="switch" id="switch5">
+                    </p>
+                    
+                    <p>
+                        <label for="switch6" class="inline">Turn me on</label>
+                        <input type="checkbox" class="switch" id="switch6">
+                    </p>
+                    
+                    <div class="line"></div>
+                    
+                    <p>Is getting very long!</p>
+                    
+                    <div class="btn-group dropdown">
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                            Scroll me down
+                            <span class="caret">
+                                <span class="icon-down"></span>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Choice 1</a></li>
+                            <li><a href="#">Choice 2</a></li>
+                            <li><a href="#">Choice 3</a></li>
+                            <li><a href="#">Dropdown link</a></li>
+                            <li><a href="#">Dropdown link</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="line"></div>
+                    
+                    <p>
+                        <label for="switch5" class="inline">Not advanced</label>
+                        <input type="checkbox" checked class="switch" id="switch5">
+                    </p>
+                    
+                    <p>
+                        <label for="switch6" class="inline">Turn me off</label>
+                        <input type="checkbox" checked class="switch" id="switch6">
+                    </p>
+                </div>
+            </div>
+            
+            <div id="loading" class="overlay loading">
+                <span class="icon-loading animate-spin"></span>
+                <span class="text">Loading &hellip;</span>
+                <a class="icon-close" href="#" title="cancel operation"></a>
             </div>
             
             <div id="step1" tabindex="-1" role="dialog" aria-labelledby="step1Label" aria-hidden="true"
@@ -156,7 +322,8 @@
     </div>
     
     <!-- Sign up -->
-    <div class="modal fade narrow autocenter enlarge-on-mobile" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal fade narrow autocenter enlarge-on-mobile" id="signupModal"
+         tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true" data-autocenter-coefficient="2.6">
         <div class="modal-dialog modal-content modal-body inverse user-dialog">
             
             <p class="text">By signing up to this service you agree to our <a href="#">privacy policy</a></p>
@@ -198,13 +365,18 @@
                 </p>
                 
                 <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
-                    <input class="form-control" type="password" name="password" placeholder="Password">
+                    <input class="form-control" type="password" name="password" placeholder="Password" id="js-signup-password">
                     <span class="input-group-addon icon-lock"></span>
                 </p>
                 
                 <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
                     <input class="form-control" type="password" name="password2" placeholder="Confirm password">
                     <span class="input-group-addon icon-lock"></span>
+                </p>
+                
+                <p class="input-group text" id="js-password-strength-message">
+                    <span class="pwstrength_viewport_progress"></span>
+                    <span class="pwstrength_viewport_verdict"></span>
                 </p>
                 
                 <button class="btn btn-default">Sign up</button>
@@ -256,16 +428,18 @@
                     <span class="input-group-addon icon-lock"></span>
                 </p>
                 
-                <p class="checkbox text text-left">
-                    <label class="hastip" data-placement="top" title="For your protection, keep this checked only on devices you use regularly">
-                        <input type="checkbox" name="remember">
-                        Stay signed in
-                    </label>
+                <p class="text text-left">
+                    <span class="custom-checkbox hastip"
+                          data-placement="top"
+                          title="For your protection, keep this checked only on devices you use regularly">
+                        <input type="checkbox" id="remember-signup" name="remember" />
+                        <label for="remember-signup"></label>
+                    </span>
+                    
+                    <label for="remember-signup">Stay signed in</label>
                 </p>
                 
                 <p><button class="btn btn-default">Sign in</button></p>
-                
-                
             </form>
             
             <p class="text"><a href="#">Forgot your password?</a></p>
@@ -278,10 +452,12 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/scroller/scroller.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.switch.js"></script>
+    <script src="js/pwstrength.js"></script>
     <script src="js/nodeshot.js"></script>
-    
     <script>
         $(window).load(function(e){
             var cesiumWidget = new Cesium.CesiumWidget('map-js');
