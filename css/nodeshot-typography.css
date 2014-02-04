@@ -60,6 +60,23 @@ body article blockquote{
     font-size: 13px
 }
 
+.user-dialog p.text{
+    font: normal 14px/20px "Arial", sans-serif;
+}
+
+.side-panel h1,
+.side-panel h2,
+.side-panel h3{
+    margin: 0 0 13px;
+    font: bold 14px "Arial", sans-serif;
+    font-variant: small-caps;
+    text-transform: uppercase;
+}
+
+.side-panel{
+    font: normal 14px "Helvetica", "Arial", sans-serif;
+}
+
 /* --- LARGE SCREENS --- */
 
 @media screen and (min-width: 1150px){

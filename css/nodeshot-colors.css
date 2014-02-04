@@ -188,6 +188,10 @@ body article blockquote.style2{ border-left-color: #4195e5 }
     color: #fff
 }
 
+.user-dialog p.text{
+    color: #3d3d3d;
+}
+
 .inverse{
     background-color: #fff;
     color: #4e4e4e;
@@ -782,4 +786,18 @@ label.inline{ margin: 0 }
     margin-bottom: 10px;
     border-top: 1px solid #fff;
     border-bottom: 1px solid #d2d2d2
+}
+
+.separator .text{
+    background-color: #fff;
+    color: #7d7d7d;
+}
+
+.panel-inner{
+    background-color: #f1f1f1;
+    border: 1px solid #dadada;
+}
+
+#js-password-strength-message .progress{
+    border: 1px solid #ccc;
 }
