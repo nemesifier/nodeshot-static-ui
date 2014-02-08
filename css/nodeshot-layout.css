@@ -275,6 +275,10 @@
 #notifications p{ margin: 0 0 0 48px }
 #notifications .time{ margin-top: 3px }
 
+#main-actions a.dropdown-toggle{
+    min-width: 170px;
+}
+
 /* --- Content --- */
 
 body .breadcrumb{ margin: 0 }
