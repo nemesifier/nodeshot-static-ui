@@ -37,6 +37,9 @@ var setMapDimensions = function(){
 }
 
 var setNotificationsLeft = function(){
+    if($('#top-bar .notifications').length < 1){
+        return;
+    }
 	//var 
 	var left = $('#top-bar .notifications').offset().left,
 		button_width = $('#top-bar .notifications').outerWidth();

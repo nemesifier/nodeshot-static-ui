@@ -93,7 +93,8 @@
     color: #4d4d4d;
 }
 
-#general-search a:hover{
+#general-search a:hover,
+.btn-group.bootstrap-select ul.dropdown-menu .selected a{
     background-color: #0a246a;
     color: #fff !important;
 }
@@ -134,6 +135,7 @@
 
 #top-bar .notifications{ width: 89px }
 #top-bar .notifications .bg{
+    display: none;
     position: absolute;
     top: 13px;
     right: 18px;
@@ -275,10 +277,6 @@
 #notifications p{ margin: 0 0 0 48px }
 #notifications .time{ margin-top: 3px }
 
-#main-actions a.dropdown-toggle{
-    min-width: 170px;
-}
-
 /* --- Content --- */
 
 body .breadcrumb{ margin: 0 }
@@ -287,6 +285,10 @@ article.center-stage{
     position: relative;
     padding: 0;
     margin: 25px 4.5%;
+}
+
+.content{
+	padding: 25px 35px;
 }
 
 /* --- TABLETS AND DESKTOPS --- */
@@ -303,6 +305,8 @@ article.center-stage{
         height: 70px;
         padding: 18px 25px;
     }
+    
+    #main-actions a.dropdown-toggle{ min-width: 170px }
     
     #top-bar .icon-globe{
         position: absolute;
@@ -338,6 +342,8 @@ article.center-stage{
         width: 210px;
         margin-right: 1.8%;
     }
+    
+    #main-actions a.dropdown-toggle{ min-width: 0 }
 }
 
 /* --- adjustments for small sizes  --- */
@@ -483,9 +489,11 @@ article.center-stage{
 }
 
 .loading{
+	top: 145px;
     padding: 7px 14px;
     cursor: default;
     display: none;
+	z-index: 9999;
 }
 .loading .icon-loading{
     font-size: 17px;
@@ -499,8 +507,6 @@ article.center-stage{
 }
 
 .loading .icon-close{ position: static }
-
-#map .loading{ top: 25px; right: 25px }
 
 #map-container{
     position: relative;
@@ -582,7 +588,12 @@ article.center-stage{
     padding: 7px 12px !important;
     max-width: 237px !important;
     text-align: left;
-    font-size: 12px
+    font-size: 12px;
+}
+
+#signup-modal .tooltip-inner{
+	max-width: 400px !important;
+    white-space: nowrap;
 }
 
 #map-legend{
@@ -592,6 +603,10 @@ article.center-stage{
     bottom: 14px;
     padding: 12px 15px 10px;
     min-width: 120px;
+}
+
+#map-legend a{
+	float: left;
 }
 
 #map-legend.right{
@@ -619,7 +634,8 @@ article.center-stage{
     list-style: none outside;
     margin: 0;
     padding: 0;
-    line-height: 24px
+    line-height: 24px;
+	
 }
 
 .circle{
@@ -796,12 +812,21 @@ article.center-stage{
     position: absolute;
     top: 0;
     z-index: 1000; /* cover map */
-    overflow: hidden;
     right: 0px;
     padding: 8px;
     min-width: 150px;
     max-width: 420px;
     min-height: 54px;
+}
+
+.side-panel:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -1px;
+	width: 2px;
+	height: 53px;
+	background-color: #e4e4e4;
 }
 
 .side-panel .tool{
@@ -873,6 +898,213 @@ article.center-stage{
 
 .doublemargin > p,
 .doublemargin > div,
-.doublemargin .btn-group.dropdown{
+.doublemargin .btn-group.dropdown,
+.doublemargin .btn-group.bootstrap-select{
     margin-bottom: 20px
+}
+
+.map-overlay{
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	overflow: auto;
+}
+
+.animate-width{
+	width: 0%;
+}
+
+.error-msg{
+	display: none;
+	margin-left: 10px;
+}
+
+/*  --- Node Details --- */
+
+#map-overlay-container{
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    top: 195px;
+    left: 0;
+}
+
+#node-details{
+    padding: 25px 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #f2f2f2;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #9b948e;
+    border-bottom: 0;
+}
+
+.short-map #map-js{
+    height: 390px !important;
+}
+
+#map-container.short-map{
+    background-color: #aba49c;
+}
+
+#node-details .actions{
+    margin: 25px 0;
+}
+
+#node-details .actions a{
+    margin-right: 30px;
+}
+
+#node-details .actions a:before{
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    bottom: -2px;
+    margin-right: 6px;
+}
+
+#node-details .actions img{
+    width: 19px;
+    margin-right: 6px
+}
+
+article .nav-tabs{
+    border-color: #ccc;
+    margin-bottom: 25px;
+}
+
+article .nav-tabs a{
+    text-decoration: none
+}
+
+article .nav-tabs > li > a,
+article .nav-tabs > li.dropdown > a.dropdown-toggle{
+    margin-right: 3px;
+    background-color: #979490;
+    color: #fff;
+}
+
+article .nav-tabs > li > a:hover,
+article .nav-tabs > li > a:focus,
+article .nav-tabs > li.dropdown.open > a.dropdown-toggle{
+    background-color: #4d4d4d !important;
+    color: #fff !important;
+}
+
+article .nav-tabs > .active > a,
+article .nav-tabs > .active > a:hover,
+article .nav-tabs > .active > a:focus{
+    background-color: #f2f2f2;
+    border: 1px solid #979490;
+    border-bottom-color: transparent;
+}
+
+.table{
+    border: 1px solid #e2e2e2;
+}
+
+.table td{
+    border: 1px solid #e2e2e2;
+    border-bottom: 0 none !important;
+    border-top: 0 none !important;
+}
+
+.table.left-labels .left,
+.table.left-labels .right{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.table.left-labels .left{
+    width: 24%;
+    min-width: 110px;
+    text-align: right;
+    font-weight: bold;
+    color: #303030;
+}
+
+img.avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+#comments h3{
+    margin-bottom: 20px;
+}
+
+#comments .input-group-addon{
+    background: none;
+    border: 0 none !important;
+    padding: 0 14px 0 0 !important;
+    -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+    vertical-align: top;
+}
+
+#comments .form-control{
+    height: 50px;
+    border-radius: 5px;
+    padding: 0;
+    color: #7c7c7c;
+}
+
+.new-comment textarea{
+    /*border: 0 none;*/
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 12px;
+    min-height: 50px;
+    background-color: transparent;
+}
+
+.new-comment textarea{
+    border: 0 none;
+    outline: 0 none;
+}
+
+.new-comment .initial{
+    font-size: 18px;
+    line-height: 38px;
+}
+
+.new-comment, .comment{
+    margin-bottom: 30px;
+}
+
+.comment{
+    position: relative;
+}
+
+.comment .avatar{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.comment .meta-data,
+.comment .text{
+    margin-left: 64px;
+}
+
+.comment .meta-data{
+    margin-bottom: 5px;
+    color: #676767;
+    font-size: 13px;
+}
+
+.comment .separator{
+    margin: 0 3px;
+}
+
+.comment .text{
+    font-size: 14px
 }

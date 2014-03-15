@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nodeshot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.switch.css" rel="stylesheet">
+    <!--<link href="css/bootstrap-theme.min.css" rel="stylesheet">-->
+    <link href="css/nodeshot-layout.css" rel="stylesheet">
+    <link href="css/nodeshot-colors.css" rel="stylesheet">
+    <link href="css/nodeshot-backgrounds.css" rel="stylesheet">
+    <link href="css/nodeshot-typography.css" rel="stylesheet">
+    <link href="css/nodeshot-backgrounds.css" rel="stylesheet">
+    <link href="css/nodeshot-typography.css" rel="stylesheet">
+    <link href="js/scroller/scroller.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/nodeshot.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="css/nodeshot-ie7.css">
+    <![endif]-->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    
+    <link href="//api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css" rel="stylesheet" />
+    <script src="//api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js"></script>
+</head>
+<body>
+    <div id="preloader">
+        <p class="inner">
+            <span class="icon-loading animate-spin"></span> Loading &hellip;
+        </p>
+    </div>
+    <header>
+        <nav id="top-bar">
+            <h1><a href="#">Nodeshot</a></h1>
+            
+            <div id="general-search">
+                <input type="text" id="general-search-input" placeholder="Search for data">
+                <span class="icon-search">&nbsp;</span>
+                <span class="icon-spinner animate-spin"></span>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="icon-pin">Zioproto Gallia</a></li>
+                    <li><a href="#" class="icon-pin">Hotspot Gallicano</a></li>
+                    <li><a href="#" class="icon-pin">Pisa::Galluppi</a></li>
+                    <li><a href="#" class="icon-user">galluswifi</a></li>
+                    <li><a href="#" class="icon-user">Alberto gallo</a></li>
+                </ul>
+            </div>
+            
+            <ul id="main-actions">
+                <li>
+                    <a href="#" class="icon-search">&nbsp;</a>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#signupModal"><span class="icon-user-add"></span><span class="text">Sign up</span></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#signinModal"><span class="icon-user"></span><span class="text">Sign in</span></a></li>
+                <!--<li>
+                    <a href="#" class="notifications">
+                        <span class="icon-globe">&nbsp;</span>
+                        &nbsp;
+                        <span class="bg">3</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="icon-user"></span>
+                        <span class="text" id="username-js">nemesisdesign</span>
+                        <span class="caret"></span>
+                    </a>
+                    
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="icon-user"></span>My profile</a></li>
+                        <li><a href="#"><span class="icon-wrench"></span>Settings</a></li>
+                        <li><a href="#"><span class="icon-off"></span>Logout</a></li>
+                    </ul>
+                </li>-->
+                <li>
+                    <a href="#" class="icon-menu"
+                       data-toggle="collapse"
+                       data-target="#ns-top-nav-links">&nbsp;</a>
+                </li>
+            </ul>
+        </nav>
+        <nav id="nav-bar" class="navbar navbar-inverse" role="navigation">
+            <div class="collapse navbar-collapse" id="ns-top-nav-links">
+                <ul class="nav navbar-nav">
+                    <li><a href="#"><span class="icon-squares"></span>Dashboard</a></li>
+                    <li class="active"><a href="#"><span class="icon-globe"></span>Map</a></li>
+                    <li><a href="#"><span class="icon-nodes"></span>Nodes</a></li>
+                    <li><a href="#"><span class="icon-layer"></span>Layers</a></li>
+                    <li><a href="#"><span class="icon-chart-bar"></span>Statistics</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="icon-info-circle"></span>About
+                            <span class="caret"></span>
+                        </a>
+            
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="icon-plus-squared"></span>More
+                            <span class="caret"></span>
+                        </a>
+            
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div id="map-container" class="short-map">
+        
+        <div id="map">
+            <div id="map-js"></div>
+        </div>
+        
+        <div id="map-overlay-container">
+            <article id="node-details" class="center-stage">
+                <h2>Very Cool Location</h2>
+                
+                <p class="actions">
+                    <a href="#"><img src="images/nyancat.jpg" alt="">nyancat</a>
+                    <a href="#" class="icon-mail">contact</a>
+                    <a href="#" class="icon-link">permalink</a>
+                    <a href="#" class="icon-edit">edit</a>
+                </p>
+                
+                <ul class="nav nav-tabs" id="node-menu">
+                    <li class="active"><a href="#">General info</a></li>
+                    <li><a href="#">Images (4)</a></li>
+                    <li><a href="#">Devices (3)</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Dropdown <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Link 1</a></li>
+                            <li><a href="#">Link 2</a></li>
+                            <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="row">
+                    <div class="col-sm-6 left">
+                        <table class="table table-striped left-labels">
+                            <tr>
+                                <td class="left">
+                                    Status:
+                                </td>
+                                <td class="right">
+                                    <span class="status" style="background:#006019">active</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Layer:
+                                </td>
+                                <td class="right">
+                                    <a href="#">Rome</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Address:
+                                </td>
+                                <td class="right">
+                                    Via della Bella Villa 94, Rome
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Elevation:
+                                </td>
+                                <td class="right">
+                                    100 meters
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Added:
+                                </td>
+                                <td class="right">
+                                    8 Sep 2013, 4:49 p.m.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Updated:
+                                </td>
+                                <td class="right">
+                                    21 Dec 2013, 1:22 a.m.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    Hotspot:
+                                </td>
+                                <td class="right">
+                                    <span class="icon-ok"></span>
+                                    <span class="icon-cancel"></span>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                        <h3>Description</h3>
+                        <p>Lorem ipsum dolor sit amet consectetuer ut et molestie ut sagittis. Eget nunc orci Aenean tortor hendrerit dolor semper justo nibh sapien. Leo eros quis et Vestibulum ut cursus sagittis velit sodales volutpat.</p>
+                    </div>
+                    <div class="col-sm-6 right">
+                        right
+                    </div>
+                </div>
+                
+                <div id="comments">
+                    <h3>2 Comments</h3>
+                    
+                    <form action="" class="new-comment">
+                        <div class="input-group">
+                            <span class="input-group-addon"><img class="avatar" src="images/user-1.png" alt=""></span>
+                            <div class="form-control">
+                                <textarea name="text" class="initial" placeholder="Join the discussion..." rows="1"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="comment">
+                        <img class="avatar" src="images/user-2.png" alt="">
+                        <div class="meta-data">
+                            <a href="#">tiger</a>
+                            <span class="separator">•</span>
+                            <span class="date">2 hours ago</span>
+                        </div>
+                        <p class="text">
+                            Lorem ipsum dolor sit amet consectetuer ut et molestie ut sagittis. Eget nunc orci Aenean tortor hendrerit dolor semper justo nibh sapien. Leo eros quis et Vestibulum ut cursus sagittis velit sodales volutpat.
+                        </p>
+                    </div>
+                    
+                    <div class="comment">
+                        <img class="avatar" src="images/user-1.png" alt="">
+                        <div class="meta-data">
+                            <a href="#">nemesis</a>
+                            <span class="separator">•</span>
+                            <span class="date">13 hours ago</span>
+                        </div>
+                        <p class="text">
+                            Scrivo commenti a caso perchè non ho nulla da fare.<br><br>
+                            Lorem ipsum dolor sit amet consectetuer ut et molestie ut sagittis. Eget nunc orci Aenean tortor hendrerit dolor semper justo nibh sapien. Leo eros quis et Vestibulum ut cursus sagittis velit sodales volutpat.
+                        </p>
+                    </div>
+                </div>
+                
+                <a href="#" class="icon-close"></a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sign up -->
+    <div class="modal fade narrow autocenter enlarge-on-mobile" id="signupModal"
+         tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true" data-autocenter-coefficient="2.6">
+        <div class="modal-dialog modal-content modal-body inverse user-dialog">
+            
+            <p class="text">By signing up to this service you agree to our <a href="#">privacy policy</a></p>
+            
+            <p class="social-buttons">
+                <a href="#" class="btn btn-social btn-facebook">
+                    <span class="icon icon-facebook"></span>
+                    <span class="text">Sign up with Facebook</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+                
+                <a href="#" class="btn btn-social btn-google">
+                    <span class="icon icon-google"></span>
+                    <span class="text">Sign up with Google</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+                
+                <a href="#" class="btn btn-social btn-github">
+                    <span class="icon icon-github"></span>
+                    <span class="text">Sign up with Github</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+            </p>
+            
+            <p class="separator">
+                <span class="line"></span>
+                <span class="text">or</span>
+            </p>
+            
+            <form action="" method="post">
+                <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus" data-trigger="focus">
+                    <input class="form-control" type="text" name="username" placeholder="Username">
+                    <span class="input-group-addon icon-user"></span>
+                </p>
+                
+                <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
+                    <input class="form-control " type="email" name="email" placeholder="Email">
+                    <span class="input-group-addon icon-mail"></span>
+                </p>
+                
+                <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
+                    <input class="form-control" type="password" name="password" placeholder="Password" id="js-signup-password">
+                    <span class="input-group-addon icon-lock"></span>
+                </p>
+                
+                <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
+                    <input class="form-control" type="password" name="password2" placeholder="Confirm password">
+                    <span class="input-group-addon icon-lock"></span>
+                </p>
+                
+                <p class="input-group text" id="js-password-strength-message">
+                    <span class="pwstrength_viewport_progress"></span>
+                    <span class="pwstrength_viewport_verdict"></span>
+                </p>
+                
+                <button class="btn btn-default">Sign up</button>
+            </form>
+            
+            <p class="text">Already have an account? <a href="#">Sign in</a></p>
+            
+            <a class="icon-close" data-dismiss="modal" href="#"></a>
+        </div>
+    </div>
+    
+    <!-- Sign in -->
+    <div class="modal fade narrow autocenter enlarge-on-mobile" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-content modal-body inverse user-dialog">
+            
+            <p class="social-buttons">
+                <a href="#" class="btn btn-social btn-facebook">
+                    <span class="icon icon-facebook"></span>
+                    <span class="text">Sign in with Facebook</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+                
+                <a href="#" class="btn btn-social btn-google">
+                    <span class="icon icon-google"></span>
+                    <span class="text">Sign in with Google</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+                
+                <a href="#" class="btn btn-social btn-github">
+                    <span class="icon icon-github"></span>
+                    <span class="text">Sign in with Github</span>
+                    <span class="hover">&nbsp;</span>
+                </a>
+            </p>
+            
+            <p class="separator">
+                <span class="line"></span>
+                <span class="text">or</span>
+            </p>
+            
+            <form action="" method="post">
+                <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
+                    <input class="form-control" type="text" name="username" placeholder="Username or Email">
+                    <span class="input-group-addon icon-user"></span>
+                </p>
+                
+                <p class="input-group hastip" title="example tooltip" data-placement="top" data-trigger="focus">
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                    <span class="input-group-addon icon-lock"></span>
+                </p>
+                
+                <p class="text text-left">
+                    <span class="custom-checkbox hastip"
+                          data-placement="top"
+                          title="For your protection, keep this checked only on devices you use regularly">
+                        <input type="checkbox" id="remember-signup" name="remember" />
+                        <label for="remember-signup"></label>
+                    </span>
+                    
+                    <label for="remember-signup">Stay signed in</label>
+                </p>
+                
+                <p><button class="btn btn-default">Sign in</button></p>
+            </form>
+            
+            <p class="text"><a href="#">Forgot your password?</a></p>
+            
+            <p class="text">Don't have an account yet? <a href="#">Sign up</a></p>
+            
+            <a class="icon-close" data-dismiss="modal" href="#"></a>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/scroller/scroller.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.switch.js"></script>
+    <script src="js/pwstrength.js"></script>
+    <script src="js/nodeshot.js"></script>
+    <script>
+        
+        var setMinHeight = function(){
+            var containerHeight = $('#map-container').outerHeight(),
+                topDistance = parseInt($('#map-overlay-container').css('top').replace('px', ''));
+                newMinHeight = containerHeight - topDistance;
+            
+            if(newMinHeight > 150){
+                $('#node-details').css('min-height', newMinHeight);
+            }
+        }
+        
+        var originalHeight = $('.new-comment textarea').height();
+            incrementHeight = 23;
+        
+        $('.new-comment textarea').on('keydown', function(e){
+            var self = $(this);
+            
+            if(this.value.length === 0 && self.hasClass('initial')){
+                self.removeClass('initial');
+            }
+        }).on('keyup', function(e){
+            var self = $(this);
+            
+            if(this.value.length === 0 && !self.hasClass('initial')){
+                self.addClass('initial');
+            }
+            
+            var lht = parseInt(self.css('lineHeight'), 10),
+                lines = Math.floor(this.scrollHeight / incrementHeight),
+                additionalLines = 0;
+            
+            if(lines > 2){
+                additionalLines = lines - 2;
+                //self.attr('rows', lines);
+                self.parent().height(originalHeight + lht * additionalLines);
+                //console.log(originalHeight + incrementHeight * additionalLines);
+            }
+            else{
+                //self.height(originalHeight);
+            }
+            
+            console.log({
+                scrollHeight: this.scrollHeight,
+                lines: lines,
+                additionalLines: additionalLines
+            })
+        });
+        
+        $(window).on('resize', function(e){
+            setMinHeight();
+        });
+        
+        $(window).load(function(e){
+            $('body').attr('style', '').css({ 'overflow-x': 'hidden', 'overflow-y': 'auto' });
+            setMinHeight();
+            
+            var map = L.mapbox.map('map-js', 'examples.map-9ijuk24y').setView([41.6682635, 12.50469446], 17);
+        });
+        
+    </script>
+</body>
+</html>
