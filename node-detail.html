@@ -135,17 +135,24 @@
         </div>
         
         <div id="map-overlay-container">
-            <article id="node-details" class="center-stage">
-                <h2>Very Cool Location</h2>
+            <article id="node-details" class="center-stage responsive-padding">
                 
-                <p class="actions">
+                <h2>
+                    Very Cool Location
+                    <span class="vote">
+                        <a href="#" class="icon-thumbs-up">10</a>
+                        <a href="#" class="icon-thumbs-down">5</a>
+                    </span>
+                </h2>
+                
+                <p class="actions" style="clear:both">
                     <a href="#"><img src="images/nyancat.jpg" alt="">nyancat</a>
                     <a href="#" class="icon-mail">contact</a>
                     <a href="#" class="icon-link">permalink</a>
                     <a href="#" class="icon-edit">edit</a>
                 </p>
                 
-                <ul class="nav nav-tabs" id="node-menu">
+                <ul class="nav nav-tabs hidden-xs" id="node-menu">
                     <li class="active"><a href="#">General info</a></li>
                     <li><a href="#">Images (4)</a></li>
                     <li><a href="#">Devices (3)</a></li>
@@ -157,6 +164,18 @@
                             <li><a href="#">Link 1</a></li>
                             <li><a href="#">Link 2</a></li>
                             <li><a href="#">Link 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <ul class="nav nav-pills visible-xs" id="node-menu-mobile">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            General info <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Images (4)</a></li>
+                            <li><a href="#">Devices (3)</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -221,13 +240,29 @@
                                     <span class="icon-cancel"></span>
                                 </td>
                             </tr>
+                            <tr>
+                                <td class="left">
+                                    Rating:
+                                </td>
+                                <td class="right" id="rating-js">
+                                    <a href="#" class="rating">
+                                        <span class="icon-star"></span>
+                                        <span class="icon-star"></span>
+                                        <span class="icon-star-half"></span>
+                                        <span class="icon-star-empty"></span>
+                                        <span class="icon-star-empty"></span>
+                                    </a>
+                                </td>
+                            </tr>
                         </table>
                         
                         <h3>Description</h3>
                         <p>Lorem ipsum dolor sit amet consectetuer ut et molestie ut sagittis. Eget nunc orci Aenean tortor hendrerit dolor semper justo nibh sapien. Leo eros quis et Vestibulum ut cursus sagittis velit sodales volutpat.</p>
                     </div>
                     <div class="col-sm-6 right">
-                        right
+                        <div style="background:#333;min-height:400px;line-height:400px;color:#fff;text-align:center;font-size:18px">
+                            Image gallery coming soon
+                        </div>
                     </div>
                 </div>
                 
