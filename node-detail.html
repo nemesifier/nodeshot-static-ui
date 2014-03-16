@@ -503,7 +503,10 @@
             $('body').attr('style', '').css({ 'overflow-x': 'hidden', 'overflow-y': 'auto' });
             setMinHeight();
             
-            var map = L.mapbox.map('map-js', 'examples.map-9ijuk24y').setView([41.6682635, 12.50469446], 17);
+            window.map = L.mapbox.map('map-js', 'examples.map-9ijuk24y').setView([41.6682635, 12.50469446], 17);
+            map.panBy([0, 75], { animate: false });
+            
+            L.marker([41.6682635, 12.50469446]).addTo(map);
         });
         
     </script>
