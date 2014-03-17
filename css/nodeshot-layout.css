@@ -961,7 +961,8 @@ article.center-stage{
 }
 
 .short-map #map-js{
-    height: 390px !important;
+    height: 377px !important;
+    border-bottom: 1px solid #666;
 }
 
 #map-container.short-map{
